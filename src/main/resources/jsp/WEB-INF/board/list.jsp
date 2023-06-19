@@ -43,7 +43,7 @@
 				<td>${e.content}</td>
 				<td>${e.writer}</td>
 				<td>${e.hitCnt}</td>
-				<td>${e.createDatetime}</td>
+				<td>${fn:substring(e.createDatetime, 11, 19)}</td>
 				<td>${e.createDate}</td>
 			</tr>
 		</c:forEach>

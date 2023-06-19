@@ -54,6 +54,7 @@ public class SecurityConfig4 {
 			request.requestMatchers("/dept/list", 	  "/dept/detail/{key}").permitAll();
 			request.requestMatchers("/emp/list", 	  "/emp/detail/{key}").permitAll();
 			request.requestMatchers("/salgrade/list", "/salgrade/detail/{key}").permitAll();
+			request.requestMatchers("/board/list", "/board/detail/{key}").permitAll();
 			
 			// ADMIN 권한만 가능
 			request.requestMatchers("/dept/create",

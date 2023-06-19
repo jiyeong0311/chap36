@@ -25,6 +25,11 @@
 <section class="container">
 	<form action="/board/update" method="post">
 		<div class="mb-3">
+			<label class="form-lable mb-2" for="boardIdx">boardIdx<span>*</span></label>
+			<input class="form-control"    id="boardIdx" name="boardIdx" value="${board.boardIdx}" disabled="disabled"/>
+			<input class="form-control"    id="boardIdx" name="boardIdx" value="${board.boardIdx}" type="hidden"/>
+		</div>
+		<div class="mb-3">
 			<label class="form-lable mb-2" for="title">title<span>*</span></label>
 			<input class="form-control"    id="title"  name="title" value="${board.title}"/>
 		</div>

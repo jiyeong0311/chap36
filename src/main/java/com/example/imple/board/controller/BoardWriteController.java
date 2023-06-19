@@ -1,7 +1,6 @@
 package com.example.imple.board.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +34,9 @@ public class BoardWriteController  {
 			session.removeAttribute("board");
 			session.removeAttribute("binding");
 		}
+		
+		
+		
 	}
 	
 	
@@ -51,25 +53,12 @@ public class BoardWriteController  {
 		if(binding.hasErrors()) 
 			return"redirect:/board/write?error";
 		
-		
-		
+    
+
 		
 		var board = dto.getModel();
+        mapper.insertBoard(board);
 
-//		 if (board.getBoardIdx() != null) {
-//	            Board existingBoard = mapper.selectBoardIdx(board.getBoardIdx());
-//	            if (existingBoard != null) {
-//	                mapper.deleteAndAdjustBoardIndexes(existingBoard.getBoardIdx());
-//	            }
-//	        }
-//
-//	        // Insert new board
-//	        try {
-	            mapper.insertBoard(board);
-//	        } catch (DuplicateKeyException e) {
-//	            binding.reject("duplicate key", "아이디가 중복됩니다.");
-//	            return "redirect:/board/write?error";
-//	        }
 
 	        return "redirect:/board/list";
 	}

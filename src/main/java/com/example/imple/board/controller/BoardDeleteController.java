@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.imple.board.mapper.BoardMapper;
 import com.example.imple.board.model.BoardDTO;
-import com.example.imple.dept.model.DeptDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;

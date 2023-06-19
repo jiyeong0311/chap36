@@ -21,6 +21,7 @@
 <h1>게시글 상세 페이지</h1>
 <hr>
 <a href="/">Home</a>
+<a href="/board/list">글 목록</a>
 <hr>
 <section class="container">
 	<table class="table">
@@ -30,7 +31,7 @@
 			<tr><th>content</th>   <td>${board.content}</td></tr>
 			<tr><th>writer</th>   <td>${board.writer}</td></tr>
 			<tr><th>hitCnt</th>   <td>${board.hitCnt}</td></tr>
-			<tr><th>createDatetime</th>   <td>${board.createDatetime}</td></tr>
+			<tr><th>createDatetime</th>   <td>${fn:substring(board.createDatetime, 11, 19)}</td></tr>
 			<tr><th>createDate</th>   <td>${board.createDate}</td></tr>
 		</tbody>
 	</table>
@@ -46,11 +47,6 @@
 		<hr>
 <%-- 	</sec:authorize> --%>
 	
-	<ul>
-		<li><a href="/dept/create">/dept/create</a></li>
-		<li><a href="/dept/update?deptno=${dept.deptno}">/dept/update?deptno=${dept.deptno}</a></li>
-		<li><a href="/dept/delete?deptno=${dept.deptno}">/dept/delete?deptno=${dept.deptno}</a></li>
-	</ul>
 </section>
 </body>
 </html>

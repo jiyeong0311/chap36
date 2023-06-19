@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import com.example.standard.model.Modelable;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,9 +32,12 @@ public class BoardDTO implements Modelable<Board>{
 
 	Integer hitCnt;
 
+
 	LocalDateTime createDatetime;
 	
-	LocalDate createDate;
+	
+
+    LocalDate createDate;
 	
 	@Override
 	public Board getModel() {

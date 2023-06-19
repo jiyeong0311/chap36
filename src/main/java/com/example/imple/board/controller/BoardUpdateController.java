@@ -3,7 +3,7 @@ package com.example.imple.board.controller;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -15,11 +15,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.imple.board.mapper.BoardMapper;
 import com.example.imple.board.model.BoardDTO;
-import com.example.imple.dept.mapper.DeptMapper;
-import com.example.imple.dept.model.DeptDTO;
-import com.example.standard.controller.CreateController;
-import com.example.standard.controller.DetailController;
-import com.example.standard.controller.UpdateController;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -62,11 +57,20 @@ public class BoardUpdateController {
 		session.setAttribute("binding", binding);
 		
 		if (binding.hasErrors())
-			return "redirect:/board/list";
+			return "redirect:/board/update?error";
 		
 		var board = dto.getModel();
 		
-		mapper.updateBoard(board);
+		
+		try {
+			mapper.updateBoard(board);
+		} catch (Exception e) {
+			String errorMessage = "데이터베이스 업데이트 중 오류가 발생했습니다.";
+			log.error(errorMessage, e);
+			attr.addFlashAttribute("errorMessage", errorMessage);
+			return "redirect:/board/update";
+		}
+		
 		
 		
 		return "redirect:/board/list";

@@ -43,19 +43,6 @@
 			<label class="form-lable mb-2" for="writer">writer</label>
 			<input class="form-control"    id="writer"	   name="writer" value="${board.writer}"/>
 		</div>
-		<div class="mb-3">
-			<label class="form-lable mb-2" for="content">hitCnt</label>
-			<input class="form-control"    id="hitCnt"	   name="hitCnt" value="${board.hitCnt}"/>
-		</div>
-
-		<div class="mb-3">
-  			<label class="form-lable mb-2" for="createDatetime">createDatetime</label>
-   			<input class="form-control" id="createDatetime" name="createDatetime" value="${board.createDatetime}"/>
-		</div>
-		<div class="mb-3">
-			<label class="form-lable mb-2" for="createDate">createDate</label>
-			<input class="form-control"    id="createDate"	   name="createDate" value="${board.createDate}"/>
-		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>	
 </section>
