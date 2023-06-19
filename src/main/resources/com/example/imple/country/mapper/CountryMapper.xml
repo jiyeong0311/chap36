@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.imple.country.mapper.CountryMapper">
+<select id="countAll">
+	select count(*) from country
+</select>
+<select id="selectCitys">
+	select *
+	  from city
+	 where country_code = #{code} 
+</select>
+<resultMap type="com.example.imple.country.model.Country" id="withCitysResultMap">
+	<result property="code" column="code"/>
+	<collection property="citys" column="code" select="selectCitys"/>
+</resultMap>
+
+<select id="selectAll">
+	select *
+	  from country
+</select>
+<select id="selectAllWithCitys" resultMap="withCitysResultMap">
+	select *
+	  from country
+</select>
+
+<select id="selectPage">
+	select *
+	  from country
+</select>
+<select id="selectPageWithCitys" resultMap="withCitysResultMap">
+	select *
+	  from country
+</select>
+
+<select id="selectByCode">
+	select *
+	  from country
+	 where code = upper(#{code}) 
+</select>
+<select id="selectByCodeWithCitys" resultMap="withCitysResultMap">
+	select *
+	  from country
+	 where code = upper(#{code}) 
+</select>
+
+</mapper>

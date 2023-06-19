@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.imple.city.mapper.CityMapper">
+<select id="countAll">
+	select count(*) from city
+</select>
+
+<select id="selectAll">
+	select * 
+	  from city
+	 order by id
+</select>
+
+<select id="selectCountry">
+	select * from country where code = #{country_code}
+</select>
+
+<resultMap type="com.example.imple.city.model.City" id="withCountryResultMap">
+	<result property="countryCode" column="country_code"/>
+	<association property="country" column="country_code" select="selectCountry" />
+</resultMap>
+
+<select id="selectAllWithCountry" resultMap="withCountryResultMap">
+	select * 
+	  from city
+	 order by id 
+</select>
+
+<select id="selectPage">
+	select * 
+	  from city
+	 order by id 
+</select>
+
+<select id="selectPageWithCountry" resultMap="withCountryResultMap">
+	select * 
+	  from city
+	 order by id 
+</select>
+
+<select id="selectById">
+	select *
+	  from city
+	 where id = #{id} 
+</select>
+
+<select id="selectByIdWithCountry" resultMap="withCountryResultMap">
+	select *
+	  from city
+	 where id = #{id} 
+</select>
+
+<select id="selectByCountryCode">
+	select *
+	  from city
+	 where country_code = #{countryCode} 
+</select>
+
+<!-- <insert id="insertCity"> -->
+<!-- 	<selectKey keyProperty="id" resultType="long" order="BEFORE"> -->
+<!-- 		select city_id_seq.nextval from dual -->
+<!-- 	</selectKey> -->
+<!-- 	insert into city -->
+<!-- 	values ( -->
+<!-- 		#{id}, -->
+<!-- 		#{name,			jdbcType=VARCHAR}, -->
+<!-- 		#{countryCode,	jdbcType=VARCHAR}, -->
+<!-- 		#{district,		jdbcType=VARCHAR}, -->
+<!-- 		#{population,	jdbcType=BIGINT} -->
+<!-- 	) -->
+<!-- </insert> -->
+
+<insert id="insertCity">
+	insert into city
+	values (
+		city_id_seq.nextval,
+		#{name,			jdbcType=VARCHAR},
+		#{countryCode,	jdbcType=VARCHAR},
+		#{district,		jdbcType=VARCHAR},
+		#{population,	jdbcType=BIGINT}
+	)
+	<selectKey keyProperty="id" resultType="long" order="AFTER">
+		select city_id_seq.currval from dual
+	</selectKey>
+</insert>
+
+
+
+
+<update id="updateCity">
+	update city
+	   set name 		= #{name,		jdbcType=VARCHAR},
+		   country_code	= #{countryCode,jdbcType=VARCHAR},
+		   district		= #{district,	jdbcType=VARCHAR},
+		   population	= #{population,	jdbcType=BIGINT}
+	 where id 			= #{id} 
+</update>
+
+<delete id="delete">
+	delete from city
+	 where id = #{id}
+</delete>
+
+
+
+
+
+</mapper>

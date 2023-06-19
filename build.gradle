@@ -1,0 +1,78 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'eclipse-wtp'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+eclipse {
+    wtp {
+        facet {
+            facet name: 'jst.web', 		version: '6.0' // Servlet Spec Version 지정
+            facet name: 'jst.java', 	version: '17' // Java Version 지정, 17
+            facet name: 'wst.jsdt.web', version: '1.0'// JavaScript
+        }
+    }
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	
+	//MySQL
+	implementation 'mysql:mysql-connector-java:8.0.33'
+	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
+	
+	//
+	// JSP 설정
+	//	
+    compileOnly    group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.0.0'
+    implementation group: 'jakarta.servlet.jsp.jstl', name: 'jakarta.servlet.jsp.jstl-api', version: '3.0.0'
+    implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '3.0.1'
+    implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '11.0.0-M4'
+    //
+    // Security Taglibs
+    //
+    implementation 'org.springframework.security:spring-security-taglibs:6.1.0'
+    //
+    // Font-End Client Library 설정
+    //
+    implementation 'org.webjars:webjars-locator-core:0.52'
+    implementation 'org.webjars:bootstrap:5.2.3'
+    implementation 'org.webjars:jquery:3.6.4'
+    //
+    // PageHelper
+    // 
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.6'
+    
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
