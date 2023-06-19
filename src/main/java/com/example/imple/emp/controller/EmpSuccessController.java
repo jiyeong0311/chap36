@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.imple.dept.mapper.DeptMapper;
-import com.example.standard.controller.DetailController;
 import com.example.standard.controller.SuccessController;
 
 import jakarta.servlet.http.HttpServletRequest;

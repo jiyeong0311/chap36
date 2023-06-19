@@ -13,144 +13,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="/favicon.png">
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/join.css">
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
-
 
 <title>Join.jsp</title>
 </head>
 <body>
-<h3>회원가입</h3>
 <a href="/">Home</a>
+
+    <div class="registration-form">
+        <form action="/user/join" method="post">
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" name="id" value="${users.id}" placeholder="아이디">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control item"  name="password" value="${users.password}" placeholder="비밀번호">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" name="name" value="${users.name}" placeholder="이름">
+            </div>
+            <div class="form">
+                <input type="text" class="form-control item" name="birth" value="${users.birth}" placeholder="1990-01-01">
+            </div>
+			<div class="form-group">
+			    <div class="radio-group">
+			        <input type="radio" class="form-control" id="genderMale" name="gender" value="M" ${users.gender == 'M' ? 'checked' : ''}>
+			        <label class="form-check-label" for="genderMale">Male</label>
+			        <input type="radio" class="form-control" id="genderFemale" name="gender" value="F" ${users.gender == 'F' ? 'checked' : ''}>
+			        <label class="form-check-label" for="genderFemale">Female</label>
+			    </div>
+			</div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="email" name="email" placeholder="you@example.com" value="${users.email}" >
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="address" name="address" placeholder="서울특별시 강남구" value="${users.address}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="tel" name="tel" placeholder="010-1234-5678" value="${users.tel}">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">회원가입</button>
+                <hr>
+                <a href="/user/login.jsp" class="btn btn-block login">로그인</a>
+            </div>
+        </form>
+        <div class="social-media">
+            <h5>Sign up with social media</h5>
+            <div class="social-icons">
+                <a href="https://github.com/" target="_blank"><i class="icon-social-github" title="GitHub"></i></a>
+                <a href="https://www.google.com/" target="_blank"><i class="icon-social-google" title="Google"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="icon-social-instagram" title="Instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="/css/join.css"></script>
+
+
 <hr>
-        <!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
-        <!-- 값(파라미터) 전송은 POST 방식, 전송할 페이지는 JoinPro.jsp -->
-
-<section class="container">
-<form action="/user/join" method="post">
-<div class="input-form-backgroud row">
-	<div class="input-form col-md-12 mx-auto">
-		
-<div class="mb-3">
-	<label for="id" >아이디</label> <input type="text"
-		class="form-control" name="id" value="${users.id}" />
-</div>
-<div class="mb-3">
-	<label for="password">비밀번호</label> <input type="password"
-		class="form-control" name="password" value="${users.password}" />
-</div>
-<!-- <div class="mb-3"> -->
-<!-- 	<label for="password">비밀번호 재확인</label> <input type="hidden" -->
-<!-- 		class="form-control" name="password" value="" /> <input -->
-<!-- 		type="password" class="form-control" name="password" value="" /> -->
-<!-- </div> -->
-<div class="mb-3">
-	<label for="name">이름</label> <input type="text"
-		class="form-control" name="name" value="${users.name}"/>
-	<div class="invalid-feedback">이름을 입력해주세요.</div>
-</div>
-
-		<div class="mb-3">
-			<label class="form-lable mb-2" for="birth">생년월일</label>
-			<input class="form-control"    id="birth" name="birth" placeholder="2010-01-01" value="${users.birth}"/>
-		</div>
-
-		<div class="form-group">
-			<label for="gender">성별</label>
-			<div>
-				<input type="radio" class="form-check-input" id="genderMale" name="gender" value="M"
-					${users.gender == 'M' ? 'checked' : ''}>
-				<label class="form-check-label" for="genderMale">남자</label>
-				<input type="radio" class="form-check-input" id="genderFemale" name="gender" value="F"
-					${users.gender == 'F' ? 'checked' : ''}>
-				<label class="form-check-label" for="genderFemale">여자</label>
-			</div>
-		</div><br>
-
-
-
-		<div class="mb-3">
-			<label for="email">이메일</label>
-			<input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="${users.email}" />
-			<div>이메일을 입력해주세요.</div>
-		</div>
-
-		<div class="mb-3">
-			<label for="address">주소</label>
-			<input type="text" class="form-control" id="address" name="address" placeholder="서울특별시 강남구" value="${users.address}"/>
-			<div>주소를 입력해주세요.</div>
-		</div>
-		
-		<div class="mb-3">
-			<label for="tel">전화번호</label>
-			<input type="text" class="form-control" id="tel" name="tel" placeholder="010-1234-5678" value="${users.tel}"/>
-			<div>전화번호를 입력해주세요.</div>
-		</div>
-
-<!-- 							<div class="mb-3"> -->
-<!-- 								<label for="address2">상세주소<span class="text-muted">&nbsp;(필수 -->
-<!-- 										아님)</span></label> <input type="text" class="form-control" id="address2" -->
-<!-- 									placeholder="상세주소를 입력해주세요."> -->
-<!-- 							</div> -->
-
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md-8 mb-3"> -->
-<!-- 									<label for="root">가입 경로</label> <select class="form-control"> -->
-<!-- 										<option>검색</option> -->
-<!-- 										<option>카페</option> -->
-<!-- 									</select> -->
-<!-- 									<div class="invalid-feedback">가입 경로를 선택해주세요.</div> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4 mb-3"> -->
-<!-- 									<label for="code">추천인 코드</label> <input type="text" -->
-<!-- 										class="form-control" id="code" placeholder="" required> -->
-<!-- 									<div class="invalid-feedback">추천인 코드를 입력해주세요.</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<hr class="mb-4"> -->
-<!-- 							<div class="custom-control custom-checkbox"> -->
-<!-- 								<input type="checkbox" class="custom-control-input" -->
-<!-- 									id="aggrement" required> <label -->
-<!-- 									class="custom-control-label" for="aggrement">개인정보 수집 및 -->
-<!-- 									이용에 동의합니다.</label> -->
-		</div>
-	</div>
-</div>
-
-
-
-
-<!-- 			<script> -->
-<!-- //     window.addEventListener('load', () => { -->
-<!-- //       const forms = document.getElementsByClassName('validation-form'); -->
-
-<!-- //       Array.prototype.filter.call(forms, (form) => { -->
-<!-- //         form.addEventListener('submit', function (event) { -->
-<!-- //           if (form.checkValidity() === false) { -->
-<!-- //             event.preventDefault(); -->
-<!-- //             event.stopPropagation(); -->
-<!-- //           } -->
-
-<!-- //           form.classList.add('was-validated'); -->
-<!-- //         }, false); -->
-<!-- //       }); -->
-<!-- //     }, false); -->
-<!--   </script> -->
-
-			<div class="text-center">
-				<button type="submit" class="btn btn-primary">회원가입</button>
-			</div>
-		</form>
-
-	</section>
-
-
-
-
-	<hr>
-	<c:if test="${exception ne null}">
-		<h1>${exception.message}</h1>
-	</c:if>
+<c:if test="${exception ne null}">
+	<h1>${exception.message}</h1>
+</c:if>
 
 <c:if test="${binding.hasErrors()}">
 <h2>Error Massage</h2>
@@ -162,9 +93,7 @@
 <c:forEach var="f" items="${binding.fieldErrors}">
 	<div>${f.field} ${f.defaultMessage}</div>
 </c:forEach>
-
 </c:if>
-
 
 
 </body>

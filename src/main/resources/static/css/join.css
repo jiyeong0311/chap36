@@ -2,11 +2,11 @@ body{
     background-color: rgb(242, 242, 242);
 }
 
-.login-form{
+.registration-form{
 	padding: 50px 0;
 }
 
-.login-form form{
+.registration-form form{
     background-color: #fff;
     max-width: 600px;
     margin: auto;
@@ -16,7 +16,7 @@ body{
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
-.login-form .form-icon{
+.registration-form .form-icon{
 	text-align: center;
     background-color: #526D82;
     border-radius: 50%;
@@ -29,13 +29,13 @@ body{
     line-height: 100px;
 }
 
-.login-form .item{
+.registration-form .item{
 	border-radius: 20px;
     margin-bottom: 25px;
     padding: 10px 20px;
 }
 
-.login-form .create-account{
+.registration-form .create-account{
     border-radius: 30px;
     padding: 10px 20px;
     font-size: 18px;
@@ -46,7 +46,7 @@ body{
     margin-top: 20px;
 }
 
-.login-form .login{
+.registration-form .login{
     border-radius: 30px;
     padding: 10px 20px;
     font-size: 18px;
@@ -57,7 +57,7 @@ body{
     margin-top: 20px;
 }
 
-.login-form .social-media{
+.registration-form .social-media{
     max-width: 600px;
     background-color: #fff;
     margin: auto;
@@ -70,12 +70,12 @@ body{
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
-.login-form .social-icons{
+.registration-form .social-icons{
     margin-top: 30px;
     margin-bottom: 16px;
 }
 
-.login-form .social-icons a{
+.registration-form .social-icons a{
     font-size: 23px;
     margin: 0 3px;
     color: #9BA4B5;
@@ -89,17 +89,17 @@ body{
     line-height: 45px;
 }
 
-.login-form .social-icons a:hover{
+.registration-form .social-icons a:hover{
     text-decoration: none;
     opacity: 0.6;
 }
 
 @media (max-width: 576px) {
-    .login-form form{
+    .registration-form form{
         padding: 50px 20px;
     }
 
-    .login-form .form-icon{
+    .registration-form .form-icon{
         width: 70px;
         height: 70px;
         font-size: 30px;
@@ -107,34 +107,32 @@ body{
     }
 }
 
-.checkbox-group {
-    display: flex;
-    align-items: center;
-}
 
-.checkbox-group input[type="checkbox"] {
+
+
+.radio-group input[type="radio"] {
     display: none;
-    width: 20px;
-    height: 20px; 
 }
 
-.checkbox-group label {
+.radio-group label {
+    display: inline-block;
     cursor: pointer;
     padding: 5px 10px;
+    border-radius: 20px;
     background-color: #f0f0f0;
     margin-right: 10px;
-    border-radius: 20px;
-    width: 20px; 
-    height: 20px; 
 }
 
-.checkbox-group span {
-    cursor: pointer;
-}
-
-.checkbox-group input[type="checkbox"]:checked + label {
-    background-color: #5791ff;
+.radio-group input[type="radio"]:checked + label {
+    background-color: #526D82;
     color: white;
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid #9fadca;;
+    margin: 20px 0;
 }
 
 
