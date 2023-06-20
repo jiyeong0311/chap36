@@ -1,5 +1,7 @@
 package com.example.imple.user.model;
 
+import java.util.List;
+
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
@@ -22,5 +24,6 @@ public class User {
 			 String    email;
 			 String	   address;
 			 String	   tel;
+			
 
 }

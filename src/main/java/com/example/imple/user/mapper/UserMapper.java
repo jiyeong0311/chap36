@@ -1,12 +1,14 @@
 package com.example.imple.user.mapper;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.example.imple.dept.model.Dept;
 import com.example.imple.user.model.User;
 
 @Mapper
@@ -19,6 +21,10 @@ public interface UserMapper {
 			""")
 	User selectById(String id);
 	
+	@Select("""
+			select * from users
+			""")
+	List<User> selectUsersList();
 	
 	@Insert("""
 			insert into users (id, password, role, name, birth, gender, email, address, tel)
@@ -27,20 +33,40 @@ public interface UserMapper {
 	public void insertUser (User user);
 	
 	
+	
+    @Delete("delete from users where id=#{id}")
+    public void delete(String id);
+	
+	
+	
+	
+	
+	
+	
 	@Update("""
 			update users
-			   set password = #{u.password, jdbcType=VARCHAR},
-			       name 	= #{u.name, jdbcType=VARCHAR},
-			       birth 	= #{u.birth, jdbcType=VARCHAR},
-			       gender 	= #{u.gender, jdbcType=VARCHAR},
-			       email 	= #{u.email, jdbcType=VARCHAR},
-			       address 	= #{u.address, jdbcType=VARCHAR},
-			       tel 		= #{u.tel, jdbcType=VARCHAR}
-			 where id = ${u.id}     
+			   set name 	= #{name},
+			       birth 	= #{birth},
+			       gender 	= #{gender},
+			       email 	= #{email},
+			       address 	= #{address},
+			       tel 		= #{tel}
+			 where id = #{id}     
 			""")
-	int updateUser(@Param("u") User user);
+	int updateUser(User user);
 	
-
+	
+//	@Update("""
+//			update users
+//			   set name 	= #{u.name, jdbcType=VARCHAR},
+//			       birth 	= #{u.birth, jdbcType=VARCHAR},
+//			       gender 	= #{u.gender, jdbcType=VARCHAR},
+//			       email 	= #{u.email, jdbcType=VARCHAR},
+//			       address 	= #{u.address, jdbcType=VARCHAR},
+//			       tel 		= #{u.tel, jdbcType=VARCHAR}
+//			 where id = ${u.id}     
+//			""")
+//	int updateUser(@Param("u") User user);
 
 
 }

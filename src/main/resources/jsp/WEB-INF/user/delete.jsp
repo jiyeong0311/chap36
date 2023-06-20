@@ -26,11 +26,11 @@
 	<form action="/user/delete" method="post">
 		<div class="mb-3">
 			<label class="form-lable mb-2" for="id">id<span>*</span></label>
-			<input class="form-control"    id="id" name="id" value="${users.id}" disabled="disabled"/>
+			<input class="form-control"    id="id" name="id" value="${users.id}" />
 		</div>
 		<div class="mb-3">
 			<label class="form-lable mb-2" for="password">password<span>*</span></label>
-			<input class="form-control"    id="password"  name="password" value="${users.password}" disabled="disabled"/>
+			<input class="form-control"    id="password"  name="password" value="${users.password}" />
 		</div>
 		<div class="mb-3">
 			<label class="form-lable mb-2" for="name">name</label>

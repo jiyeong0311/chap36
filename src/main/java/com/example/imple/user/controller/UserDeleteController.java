@@ -3,6 +3,7 @@ package com.example.imple.user.controller;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -39,6 +40,7 @@ public class UserDeleteController implements DeleteController<UserDTO>{
 		var id = request.getParameter("id");
 		if (Objects.nonNull(id)) {
 			var users = mapper.selectById(id);
+			model.addAttribute("users", users);			
 		}
 		
 	}
@@ -47,7 +49,22 @@ public class UserDeleteController implements DeleteController<UserDTO>{
 	public String delete(@Valid UserDTO dto, BindingResult binding, Model model, HttpServletRequest request,
 			RedirectAttributes attr) {
 
-		return "redirect:/user/delete";
+		var session = request.getSession();
+		session.setAttribute("users", dto);
+		session.setAttribute("binding", binding);
+		
+		if (binding.hasErrors())
+			return "redirect:/user/delete?error";
+		
+		var users = dto.getModel();
+		try {
+			mapper.delete(users.getId());
+		} catch (DataIntegrityViolationException e) {
+			binding.reject("foreign", "직원이 있는 부서는 삭제할 수 없습니다.");
+			return "redirect:/user/delete?error";
+		}
+		
+		return "redirect:/user/success?delete";
 	}
 	
 	

@@ -31,7 +31,8 @@
 		</div>
 		<div class="mb-3">
 			<label class="form-lable mb-2" for="password">password<span>*</span></label>
-			<input class="form-control"    id="password"  name="password" value="${users.password}"/>
+			<input class="form-control"    id="password"  name="password" value="${users.password}" disabled="disabled"/>
+			<input class="form-control"    id="password" name="password" value="${users.password}" type="hidden"/>
 		</div>
 		<div class="mb-3">
 			<label class="form-lable mb-2" for="name">name</label>

@@ -18,25 +18,31 @@
 <title>success.jsp</title>
 </head>
 <body>
-<h1>Dept Successful 성공</h1>
+<h1>User Successful 성공</h1>
 <hr>
 <a href="/">Home</a>
 <hr>
 <br>
 <c:choose>
-	<c:when test="${param.create ne null}"><h1>부서 추가 성공</h1></c:when>
-	<c:when test="${param.update ne null}"><h1>부서 수정 성공</h1></c:when>
-	<c:when test="${param.delete ne null}"><h1>부서 삭제 성공</h1></c:when>
+	<c:when test="${param.join ne null}"><h1>회원 추가 성공</h1></c:when>
+	<c:when test="${param.update ne null}"><h1>회원 수정 성공</h1></c:when>
+	<c:when test="${param.delete ne null}"><h1>회원 삭제 성공</h1></c:when>
 	<c:otherwise></c:otherwise>
 </c:choose>
+
 
 <hr>
 <section class="container">
 	<table class="table">
 		<tbody>
-			<tr><th>deptno</th><td>${dept.deptno}</td></tr>
-			<tr><th>dname</th> <td>${dept.dname}</td></tr>
-			<tr><th>loc</th>   <td>${dept.loc}</td></tr>
+			<tr><th>id</th>			<td>${users.id}</td></tr>
+			<tr><th>password</th> 	<td>${users.password}</td></tr>
+			<tr><th>name</th>   	<td>${users.name}</td></tr>
+			<tr><th>birth</th>   	<td>${users.birth}</td></tr>
+			<tr><th>gender</th>   	<td>${users.gender}</td></tr>
+			<tr><th>email</th>   	<td>${users.email}</td></tr>
+			<tr><th>address</th>   	<td>${users.address}</td></tr>
+			<tr><th>tel</th>   		<td>${users.tel}</td></tr>
 		</tbody>
 	</table>
 	<hr>

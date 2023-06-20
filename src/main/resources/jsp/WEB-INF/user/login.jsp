@@ -23,7 +23,11 @@
 </head>
 <body>
 
-				<a class="icon icon-home" href="/">HOME</a>
+<a class="icon icon-home" href="/">HOME</a>
+
+
+
+
 
 
 <c:if test="${exception ne null}">
@@ -50,9 +54,9 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">로그인</button>
 				<hr>
-                <a class="btn btn-block create-account" href="/user/join">회원가입</a>
+                <a class="btn btn-block login" href="/user/join">회원가입</a>
                 <hr>
-                <a class="btn btn-block login" href="#" id="forgot">계정 찾기</a>
+                <a class="btn btn-block find" href="#" id="forgot">계정 찾기</a>
             </div>
 			
 			

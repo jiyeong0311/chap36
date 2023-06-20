@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(251, 251, 251);
 }
 
 .login-form{
@@ -18,7 +18,7 @@ body{
 
 .login-form .form-icon{
 	text-align: center;
-    background-color: #526D82;
+    background-color: #3498db;
     border-radius: 50%;
     font-size: 40px;
     color: white;
@@ -40,7 +40,7 @@ body{
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
-    background-color: #526D82;
+    background-color: #368DC7;
     border: none;
     color: white;
     margin-top: 20px;
@@ -51,7 +51,18 @@ body{
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
-    background-color: #9DB2BF;
+    background-color: #87B8DA;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
+.login-form .find{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #B6D4E8;
     border: none;
     color: white;
     margin-top: 20px;
@@ -133,7 +144,7 @@ body{
 }
 
 .checkbox-group input[type="checkbox"]:checked + label {
-    background-color: #5791ff;
+    background-color: #526D82;
     color: white;
 }
 

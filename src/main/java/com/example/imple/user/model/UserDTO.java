@@ -26,7 +26,7 @@ public class UserDTO implements Modelable<User>{
 	String id;
 	
 	@NotBlank(message = "비밀번호를 입력해주세요.")
-	@Size(min = 6, max = 20, message = "비밀번호는 6자 이상 20자 이하여야 합니다." )
+	@Size(min = 6, max = 100, message = "비밀번호는 6자 이상 100자 이하여야 합니다." )
 	String password;
 
 	@Length(max = 20)

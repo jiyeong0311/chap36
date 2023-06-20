@@ -44,7 +44,18 @@ public class SecurityConfig4 {
 			request.requestMatchers("/webjars/**").permitAll();
 			request.requestMatchers("/css/**").permitAll();
 			request.requestMatchers("/img/**").permitAll();
+			// footer 
+			request.requestMatchers("/assets/**").permitAll();
+			
 			request.requestMatchers("/user/join").permitAll();
+			request.requestMatchers("/user/list").permitAll();
+			request.requestMatchers("/user/detail").permitAll();
+			request.requestMatchers("/user/update").permitAll();
+			request.requestMatchers("/user/delete").permitAll();
+			request.requestMatchers("/user/header").permitAll();
+			
+			
+			
 			request.requestMatchers("/board/list").permitAll();
 			request.requestMatchers("/board/write").permitAll();
 			request.requestMatchers("/board/detail").permitAll();
@@ -55,6 +66,7 @@ public class SecurityConfig4 {
 			request.requestMatchers("/emp/list", 	  "/emp/detail/{key}").permitAll();
 			request.requestMatchers("/salgrade/list", "/salgrade/detail/{key}").permitAll();
 			request.requestMatchers("/board/list", "/board/detail/{key}").permitAll();
+			request.requestMatchers("/user/list", "/user/detail/{key}").permitAll();
 			
 			// ADMIN 권한만 가능
 			request.requestMatchers("/dept/create",

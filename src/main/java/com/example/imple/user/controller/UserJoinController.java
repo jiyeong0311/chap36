@@ -67,8 +67,8 @@ public class UserJoinController {
 			return "redirect:/user/join?error";
 		}
 
-		// 회원 가입 성공하면 로그인 페이지로 이동
-		return "redirect:/user/joinPro?join";
+		// 회원 가입 성공하면 success 페이지로 이동
+		return "redirect:/user/success?join";
 	}
 
 

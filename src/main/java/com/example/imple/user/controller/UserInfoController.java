@@ -21,9 +21,8 @@ public class UserInfoController {
 	UserMapper mapper;
 	
 	@GetMapping("/info/{key}")
-	public String userInfo(@PathVariable String key, Model model, HttpServletRequest request) {
+	public String userInfo(String key, Model model, HttpServletRequest request) {
 		log.debug("key = {}", key);
-		
 		var users = mapper.selectById(key);
 		model.addAttribute("users", users);
 		
