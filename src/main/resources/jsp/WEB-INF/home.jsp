@@ -97,11 +97,10 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html">Vesperr</a></h1>
+        <h1><a href="index.html">Databox</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
@@ -129,25 +128,23 @@
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="/user/login">&nbsp;Login&nbsp;</a></li>
+          <li><a class="getstarted scrollto" href="/user/logout">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a></li>
           <li><a class="getstarted scrollto" href="/user/join">&nbsp;&nbsp;Join&nbsp;&nbsp;</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
 
 
-
-
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Grow your business with Vesperr</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with Bootstrap</h2>
+          <h1 data-aos="fade-up"> Experience Database with Databox</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Employee와 World의 데이터를 자유롭게 수정하고 추가해보세요.</h2>
+          <h3 data-aos="fade-up" data-aos-delay="400">또한, 게시판을 통해 자유롭게 글을 작성하고 공유할 수 있습니다.</h3>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="/user/join" class="btn-get-started scrollto">Get Started</a>
           </div>
@@ -157,8 +154,178 @@
         </div>
       </div>
     </div>
-
   </section><!-- End Hero -->
+
+
+   <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients clients">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="zoom-in">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Databox</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <p>
+               Databox는 Spring을 활용하여 구현되었으며, 데이터베이스와의 원활한 연동을 제공합니다. 이 플랫폼은 데이터 생성, 수정, 삭제 작업을 테스트하고, 그 결과를 실시간으로 확인할 수 있는 기능을 제공합니다.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Databox는 실시간으로 데이터를 수집하고 분석합니다.</li>
+              <li><i class="ri-check-double-line"></i> 직관적이고 사용자 친화적인 대시보드를 통해 데이터를 시각화하고 효과적으로 이해할 수 있습니다.</li>
+              <li><i class="ri-check-double-line"></i> Databox는 다양한 데이터 소스를 통합하여 한 곳에서 데이터를 관리하고 활용할 수 있습니다.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <p>
+              데이터 생성 기능을 사용하면 웹 페이지에서 간편하게 데이터를 추가할 수 있습니다. 데이터 수정 기능을 통해 기존 데이터의 속성을 업데이트하고, 
+              데이터 삭제 기능을 통해 불필요한 데이터를 제거할 수 있습니다. 모든 작업은 실시간으로 데이터베이스와 연동되며, 변경 사항은 즉시 반영됩니다.
+            </p>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- salgrade list 만들어야함 ################# -->
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Employee Data List</h2>
+          <p>Employee의 Table List를 확인하고 생성, 수정, 삭제를 할 수 있습니다</p>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+          
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box">
+              <i class="ri-store-line" style="color: #ffbb2c;"></i>
+              <h3><a href="/dept/list">Dept</a></h3>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+              <h3><a href="/emp/list">Emp</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+              <h3><a href="/">Salgrade</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>World Data List</h2>
+          <p>World의 Table List를 확인하고 생성, 수정, 삭제를 할 수 있습니다</p>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box">
+              <i class="ri-store-line" style="color: #29cc61;"></i>
+              <h3><a href="/country/list">Country</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-bar-chart-box-line" style="color: #ff5828;"></i>
+              <h3><a href="/city/list">City</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+              <h3><a href="/language/list">CountryLanguage</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+
+
+
+
+
+
+
 
 
 
