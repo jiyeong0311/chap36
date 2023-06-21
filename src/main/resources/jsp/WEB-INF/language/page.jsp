@@ -17,62 +17,63 @@
 <title>page.jsp</title>
 </head>
 <body>
-<h3 style="padding: 10px">City Page  <span class="badge bg-info">${paging.pageNum}</span></h3>
+<h3 style="padding: 10px">Country Language Page  <span class="badge bg-info">${paging.pageNum}</span></h3>
 <a href="/" class="btn btn-outline-primary btn-sm" style="margin: 10px">Home</a>
 <hr>
 
-<section class="container" align="center">
+<section class="container table-responsive" align="center">
 	<table class="table table-hover table-bordered">
 		<thead class="table-info">
 			<tr>
-				<th>id</th>
-				<th>name</th>
 				<th>countryCode</th>
-				<th>district</th>
-				<th>population</th>
+				<th>language</th>
+				<th>isOfficial</th>
+				<th>percentage</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="e" items="${list}">
 				<tr>
-					<td>${e.id}</td>
-					<td>${e.name}</td>
 					<td>${e.countryCode}</td>
-					<td>${e.district}</td>
-					<td align="right">
-					<fmt:formatNumber pattern="###,###,###,###" value="${e.population}"/>
-					</td>
+					<td>${e.language}</td>
+					<td>${e.isOfficial}</td>
+					<td align="right">${e.percentage}</td>
 				</tr>			
 			</c:forEach>
 		</tbody>
 	</table>
-	
+
+
 	<ul class="list-group list-group-horizontal justify-content-center">
 		<li class="list-group-item ${paging.pageNum == 1 ? 'disabled' : ''}">
-        	<a class="page-link ${paging.pageNum == 1 ? 'text-secondary' : 'text-primary'}" href="/city/page/1/${paging.pageSize}"">&lt;&lt;</a>
+        	<a class="page-link ${paging.pageNum == 1 ? 'text-secondary' : 'text-primary'}" href="/language/page/1/${paging.pageSize}"">&lt;&lt;</a>
     	</li>
 		<li class="list-group-item ${paging.pageNum == 1 ? 'disabled' : ''}">
-			<a class="page-link ${paging.pageNum == 1 ? 'text-secondary' : 'text-primary'}" href="/city/page/${paging.navigateFirstPage-1}/ ${paging.pageSize}">Previous</a>
+			<a class="page-link ${paging.pageNum == 1 ? 'text-secondary' : 'text-primary'}" href="/language/page/${paging.navigateFirstPage-1}/ ${paging.pageSize}">Previous</a>
 		</li>
 	<c:forEach var="n" items="${paging.navigatepageNums}">
 		<c:choose>
 			<c:when test="${n eq paging.pageNum}">
-				<li class="list-group-item active"><a href="/city/page/${n}/${paging.pageSize}" class="text-warning">${n}</a></li>
+				<li class="list-group-item active"><a href="/language/page/${n}/${paging.pageSize}" class="text-warning">${n}</a></li>
 			</c:when>
 		</c:choose>
 		<c:choose>
 			<c:when test="${n ne paging.pageNum}">
-				<li class="list-group-item		 "><a href="/city/page/${n}/${paging.pageSize}">${n}</a></li>
+				<li class="list-group-item		 "><a href="/language/page/${n}/${paging.pageSize}">${n}</a></li>
 			</c:when>
 		</c:choose>
 	</c:forEach>
 		<li class="list-group-item ${paging.pageNum == paging.navigateLastPage ? 'disabled' : ''}">
-			<a class="page-link ${paging.pageNum == paging.navigateLastPage ? 'text-secondary' : 'text-primary'}" href="/city/page/${paging.navigateLastPage+1}/${paging.pageSize}">Next</a>
+			<a class="page-link ${paging.pageNum == paging.navigateLastPage ? 'text-secondary' : 'text-primary'}" href="/language/page/${paging.navigateLastPage+1}/${paging.pageSize}">Next</a>
 		</li>
-	    <li class="list-group-item ${paging.pageNum == paging.navigateLastPage ? 'disabled' : ''}">
-        	<a class="page-link ${paging.pageNum == paging.navigateLastPage ? 'text-secondary' : 'text-primary'}" href="/city/page/${paging.pages}/${paging.pageSize}">>></a>
-    	</li>
+		<li class="list-group-item ${paging.pageNum == paging.navigateLastPage ? 'disabled' : ''}">
+		    <a class="page-link ${paging.pageNum == paging.navigateLastPage ? 'text-secondary' : 'text-primary'}" href="/language/page/${paging.pages}/${paging.pageSize}">>></a>
+		</li>
 	</ul>
+
+
+
 </section>
+<hr>
 </body>
 </html>

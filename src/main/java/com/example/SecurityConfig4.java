@@ -54,6 +54,22 @@ public class SecurityConfig4 {
 			request.requestMatchers("/user/delete").permitAll();
 			request.requestMatchers("/user/header").permitAll();
 			
+			request.requestMatchers("/country/create").permitAll();
+			request.requestMatchers("/country/list").permitAll();
+			request.requestMatchers("/country/detail").permitAll();
+			request.requestMatchers("/country/update").permitAll();
+			request.requestMatchers("/country/delete").permitAll();
+			request.requestMatchers("/country/success").permitAll();
+			
+			
+			
+			
+			
+			
+			
+			
+			request.requestMatchers("/language/detail").permitAll();
+			request.requestMatchers("/language/create").permitAll();
 			
 			
 			request.requestMatchers("/board/list").permitAll();
@@ -67,6 +83,9 @@ public class SecurityConfig4 {
 			request.requestMatchers("/salgrade/list", "/salgrade/detail/{key}").permitAll();
 			request.requestMatchers("/board/list", "/board/detail/{key}").permitAll();
 			request.requestMatchers("/user/list", "/user/detail/{key}").permitAll();
+			request.requestMatchers("/language/list", "/language/detail/{key}").permitAll();
+			request.requestMatchers("/country/list", "/country/detail/{key}").permitAll();
+			request.requestMatchers("/salgrade/list", "/salgrade/detail/{key}").permitAll();
 			
 			// ADMIN 권한만 가능
 			request.requestMatchers("/dept/create",
@@ -74,8 +93,8 @@ public class SecurityConfig4 {
 									"/dept/delete").hasAnyRole("ADMIN");
 			
 			// 모든 요청에 대해 인증된 사용자만 접근을 허용한다는 의미
-			request.anyRequest().authenticated();
-//			request.anyRequest().permitAll();
+//			request.anyRequest().authenticated();
+			request.anyRequest().permitAll();
 			
 			
 			

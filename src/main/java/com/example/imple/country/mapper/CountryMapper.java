@@ -18,4 +18,10 @@ public interface CountryMapper {
 	Page<Country> selectPageWithCitys();
 	Country 	  selectByCode(String code);
 	Country 	  selectByCodeWithCitys(String code);
+	
+	int insertCountry(Country country);
+	int updateCountry(Country country);
+	int delete(String code);
+	
+	
 }

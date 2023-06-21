@@ -15,26 +15,29 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
 
-<title>detail.jsp</title>
+<title>success.jsp</title>
 </head>
 <body>
-<h1>Country Detail 나라 정보</h1>
+<h1>Country Successful 성공</h1>
 <hr>
 <a href="/">Home</a>
 <hr>
+<a href="/country/list">/country/list</a>
+<hr>
+<br>
+<br>
+<br>
 <c:choose>
-	<c:when test="${empty param.pageNum}">
-		<a href="/country/list">/country/list</a>
-	</c:when>
-	<c:when test="${not empty param.pageNum}">
-		<a href="/country/page/${param.pageNum}/${param.pageSize}">
-			/country/page/${param.pageNum}/${param.pageSize}
-		</a>
-	</c:when>
+	<c:when test="${param.create ne null}"><h1>국가 추가 성공</h1></c:when>
+	<c:when test="${param.update ne null}"><h1>국가 수정 성공</h1></c:when>
+	<c:when test="${param.delete ne null}"><h1>국가 삭제 성공</h1></c:when>
+	<c:otherwise></c:otherwise>
 </c:choose>
+
 <hr>
 <section class="container">
 	<table class="table">
+		<tbody>
 		<tbody>
 				<tr><th>code</th>              <td>${country.code}</td></tr>              
 				<tr><th>name</th>              <td>${country.name}</td></tr>              
@@ -52,18 +55,9 @@
 				<tr><th>capital</th>           <td>${country.capital}</td></tr>           
 				<tr><th>code2</th>             <td>${country.code2}</td></tr>             
 		</tbody>
+		</tbody>
 	</table>
-	<menu class="btn-group">
-		<a href="/country/create" class="btn btn-primary">추가</a>
-		<a href="/country/update?code=${country.code}" class="btn btn-secondary">수정</a>
-		<a href="/country/delete?code=${country.code}" class="btn btn-danger">삭제</a>
-	</menu>
-		<ul>
-		<li><a href="/country/create              ">/country/create</a></li>
-		<li><a href="/country/update?id=${country.code}">/country/update?code=${country.code}</a></li>
-		<li><a href="/country/delete?id=${country.code}">/country/delete?code=${country.code}</a></li>
-	</ul>
-	
+	<hr>
 </section>
 </body>
 </html>

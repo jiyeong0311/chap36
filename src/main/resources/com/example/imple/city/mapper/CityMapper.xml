@@ -12,12 +12,12 @@
 </select>
 
 <select id="selectCountry">
-	select * from country where code = #{country_code}
+	select * from country where code = #{countryCode}
 </select>
 
 <resultMap type="com.example.imple.city.model.City" id="withCountryResultMap">
-	<result property="countryCode" column="country_code"/>
-	<association property="country" column="country_code" select="selectCountry" />
+	<result property="countryCode" column="countryCode"/>
+	<association property="country" column="countryCode" select="selectCountry" />
 </resultMap>
 
 <select id="selectAllWithCountry" resultMap="withCountryResultMap">
@@ -53,7 +53,7 @@
 <select id="selectByCountryCode">
 	select *
 	  from city
-	 where country_code = #{countryCode} 
+	 where countryCode = #{countryCode} 
 </select>
 
 <!-- <insert id="insertCity"> -->
@@ -70,19 +70,35 @@
 <!-- 	) -->
 <!-- </insert> -->
 
-<insert id="insertCity">
-	insert into city
-	values (
-		city_id_seq.nextval,
-		#{name,			jdbcType=VARCHAR},
-		#{countryCode,	jdbcType=VARCHAR},
-		#{district,		jdbcType=VARCHAR},
-		#{population,	jdbcType=BIGINT}
-	)
-	<selectKey keyProperty="id" resultType="long" order="AFTER">
-		select city_id_seq.currval from dual
-	</selectKey>
+<!-- #####Oracle 쿼리##### -->
+<!-- <insert id="insertCity"> -->
+<!-- 	insert into city -->
+<!-- 	values ( -->
+<!-- 		city_id_seq.nextval, -->
+<!-- 		#{name,			jdbcType=VARCHAR}, -->
+<!-- 		#{countryCode,	jdbcType=VARCHAR}, -->
+<!-- 		#{district,		jdbcType=VARCHAR}, -->
+<!-- 		#{population,	jdbcType=BIGINT} -->
+<!-- 	) -->
+<!-- 	<selectKey keyProperty="id" resultType="long" order="AFTER"> -->
+<!-- 		select city_id_seq.currval from dual -->
+<!-- 	</selectKey> -->
+<!-- </insert> -->
+
+
+<insert id="insertCity" useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO city (name, countryCode, district, population)
+    VALUES (
+        #{name, jdbcType=VARCHAR},
+        #{countryCode, jdbcType=VARCHAR},
+        #{district, jdbcType=VARCHAR},
+        #{population, jdbcType=BIGINT}
+    )
 </insert>
+
+
+
+
 
 
 
@@ -90,7 +106,7 @@
 <update id="updateCity">
 	update city
 	   set name 		= #{name,		jdbcType=VARCHAR},
-		   country_code	= #{countryCode,jdbcType=VARCHAR},
+		   countryCode	= #{countryCode,jdbcType=VARCHAR},
 		   district		= #{district,	jdbcType=VARCHAR},
 		   population	= #{population,	jdbcType=BIGINT}
 	 where id 			= #{id} 

@@ -48,7 +48,7 @@
 			<tr>
 				<td>${e.code}</td>
 				<td><a href="/country/detail/${e.code}">${e.name}</a></td>
-				<td>${e.continent.symbol}</td>
+				<td>${e.continent}</td>
 				<td>${e.region}</td>
 				<td>${e.surfaceArea}</td>
 				<td>${e.indepYear}</td>

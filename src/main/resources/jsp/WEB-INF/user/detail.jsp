@@ -40,14 +40,14 @@
 	<hr>
 	
 	<!-- 	ADMIN 권한만 보임 -->
-	<sec:authorize access="hasRole('ADMIN')">
+<%-- 	<sec:authorize access="hasRole('ADMIN')"> --%>
 		<menu class="btn-group">
 			<a href="/user/join" class="btn btn-primary">추가</a>
 			<a href="/user/update?id=${users.id}" class="btn btn-secondary">수정</a>
 			<a href="/user/delete?id=${users.id}" class="btn btn-danger">삭제</a>
 		</menu>
 		<hr>
-	</sec:authorize>
+<%-- 	</sec:authorize> --%>
 	
 	<ul>
 		<li><a href="/user/join">/user/join</a></li>

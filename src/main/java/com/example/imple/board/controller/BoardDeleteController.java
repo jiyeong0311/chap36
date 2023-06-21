@@ -66,7 +66,7 @@ public class BoardDeleteController {
 			return "redirect:/board/delete?error";
 		}
 
-		return "redirect:/board/list";
+		return "redirect:/board/success?delete";
 	}
 
 }

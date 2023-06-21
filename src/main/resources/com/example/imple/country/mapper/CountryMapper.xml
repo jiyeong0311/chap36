@@ -7,8 +7,9 @@
 <select id="selectCitys">
 	select *
 	  from city
-	 where country_code = #{code} 
+	 where countryCode = #{code} 
 </select>
+
 <resultMap type="com.example.imple.country.model.Country" id="withCitysResultMap">
 	<result property="code" column="code"/>
 	<collection property="citys" column="code" select="selectCitys"/>
@@ -16,7 +17,8 @@
 
 <select id="selectAll">
 	select *
-	  from country
+	  from country 
+	   order by code
 </select>
 <select id="selectAllWithCitys" resultMap="withCitysResultMap">
 	select *
@@ -42,5 +44,50 @@
 	  from country
 	 where code = upper(#{code}) 
 </select>
+
+<insert id="insertCountry" useGeneratedKeys="true" keyProperty="code">
+    INSERT INTO country (code, name, continent, region, surfaceArea, indepYear, population, lifeExpectancy, gnp,
+     					 gnpOld, localName, governmentForm, headOfState, capital, code2)
+    VALUES (
+        #{code, jdbcType=VARCHAR},
+        #{name, jdbcType=VARCHAR},
+        #{continent, jdbcType=VARCHAR},
+        #{region, jdbcType=VARCHAR},
+        #{surfaceArea, jdbcType=BIGINT},
+        #{indepYear, jdbcType=BIGINT},
+        #{population, jdbcType=BIGINT},
+        #{lifeExpectancy, jdbcType=BIGINT},
+        #{gnp, jdbcType=BIGINT},
+        #{gnpOld, jdbcType=BIGINT},
+        #{localName, jdbcType=VARCHAR},
+        #{governmentForm, jdbcType=VARCHAR},
+        #{headOfState, jdbcType=VARCHAR},
+        #{capital, jdbcType=BIGINT},
+        #{code2, jdbcType=VARCHAR}
+    )
+</insert>
+
+<update id="updateCountry">
+	update country
+	   set region 			= #{region,		jdbcType=VARCHAR},
+		   surfaceArea		= #{surfaceArea,jdbcType=BIGINT},
+		   indepYear		= #{indepYear,	jdbcType=BIGINT},
+		   population		= #{population,	jdbcType=BIGINT},
+		   lifeExpectancy	= #{lifeExpectancy,	jdbcType=BIGINT},
+		   gnp				= #{gnp,	jdbcType=BIGINT},
+		   gnpOld			= #{gnpOld,	jdbcType=BIGINT},
+		   localName		= #{localName,	jdbcType=VARCHAR},
+		   governmentForm	= #{governmentForm,	jdbcType=VARCHAR},
+		   headOfState		= #{headOfState,	jdbcType=VARCHAR}
+	 where code				= #{code} 
+</update>
+
+<delete id="delete">
+	delete from country
+	 where code = #{code}
+</delete>
+
+
+
 
 </mapper>

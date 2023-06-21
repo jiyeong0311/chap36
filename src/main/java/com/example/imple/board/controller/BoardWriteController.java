@@ -60,7 +60,7 @@ public class BoardWriteController  {
         mapper.insertBoard(board);
 
 
-	        return "redirect:/board/list";
+	        return "redirect:/board/success?write";
 	}
 
 }

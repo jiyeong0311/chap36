@@ -97,7 +97,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html">Databox</a></h1>
+        <h1><a href="/">Databox</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -277,7 +277,7 @@
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box">
               <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-              <h3><a href="/">Salgrade</a></h3>
+              <h3><a href="/salgrade/list">Salgrade</a></h3>
             </div>
           </div>
         </div>
@@ -412,6 +412,11 @@ name = <sec:authentication property="name"/>
 	<li><a href="/city/create">/city/create</a></li>
 	<li><a href="/city/update?id=2331">/city/update?id=2331</a></li>
 	<li><a href="/city/delete?id=2331">/city/delete?id=2331</a></li>
+</ul>
+<ul>
+	<li><a href="/country/create">/country/create</a></li>
+	<li><a href="/country/update?code=KOR">/country/update?code=KOR</a></li>
+	<li><a href="/country/delete?code=KOR">/country/delete?code=KOR</a></li>
 </ul>
 
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.imple.language.mapper.LanguageMapper">
+<select id="countAll">
+	select count(*) from countrylanguage
+</select>
+
+<select id="selectAll">
+	select * from countrylanguage
+</select>
+
+<!-- <select id="selectAllWithCountry"  resultMap="withCountryResultMap"> -->
+<!-- 	select * from countrylanguage -->
+<!-- </select> -->
+
+<select id="selectPage">
+	select * from countrylanguage
+</select>
+
+<select id="selectByCode">
+	select * 
+	 from countrylanguage
+	where countryCode = #{code} 
+</select>
+
+<!-- <select id="selectByCode"> -->
+<!-- 	select *  -->
+<!-- 	 from countrylanguage -->
+<!-- 	where countryCode = #{code}  -->
+<!-- </select> -->
+
+
+</mapper>

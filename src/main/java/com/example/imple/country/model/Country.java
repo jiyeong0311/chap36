@@ -2,6 +2,8 @@ package com.example.imple.country.model;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.Length;
+
 import com.example.imple.city.model.City;
 import com.example.standard.model.Modelable;
 import com.example.standard.util.Continent;
@@ -19,7 +21,7 @@ import lombok.NonNull;
 public class Country {
 	@NonNull String 	code;						
 	@NonNull String 	name;						
-			 Continent 	continent;		
+			 String 	continent;		
 			 String 	region;						
 			 Double 	surfaceArea;		
 			 Integer 	indepYear;							

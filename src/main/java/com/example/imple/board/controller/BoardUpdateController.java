@@ -73,7 +73,7 @@ public class BoardUpdateController {
 		
 		
 		
-		return "redirect:/board/list";
+		return "redirect:/board/success?update";
 	}
 	
 }

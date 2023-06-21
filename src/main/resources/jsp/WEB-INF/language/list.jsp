@@ -73,8 +73,8 @@
     <section id="features" class="features">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Dept List</h2>
-          <p>DNAME을 클릭하여 상세내용을 확인하세요!</p>
+          <h2>Language List</h2>
+          <p>LANGUAGE을 클릭하여 상세내용을 확인하세요!</p>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="300">
 <div class="container-fluid py-4">
@@ -82,16 +82,17 @@
     <div class="col-12">
       <div class="card mb-4">
         <div class="card-header pb-0">
-          <h6>Employee Table</h6>
+          <h6>CountryLanguage Table</h6>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deptno</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">dname</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">loc</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">countryCode</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">language</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">isOfficial</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">percentage</th>
                 </tr>
               </thead>
               <tbody>
@@ -100,21 +101,28 @@
                     <td class="align-middle text-center text-sm">
                       <div class="d-flex px-2 py-1">
                         <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm"><fmt:formatNumber pattern="0000" value="${e.deptno}"/></h6>
+                          <h6 class="mb-0 text-sm">${e.countryCode}</h6>
                         </div>
                       </div>
                     </td>
                     <td class="align-middle text-center text-sm">
                       <div class="d-flex px-2 py-1">
                         <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm"><a href="/dept/detail/${e.deptno}">${e.dname}</a></h6>
+                          <h6 class="mb-0 text-sm"><a href="/language/detail/${e.countryCode}">${e.language}</a></h6>
                         </div>
                       </div>
                     </td>
                     <td class="align-middle text-center text-sm">
                       <div class="d-flex px-2 py-1">
                         <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">${e.loc}</h6>
+                          <h6 class="mb-0 text-sm">${e.isOfficial}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.percentage}</h6>
                         </div>
                       </div>
                     </td>
