@@ -23,11 +23,31 @@
 	where countryCode = #{code} 
 </select>
 
-<!-- <select id="selectByCode"> -->
-<!-- 	select *  -->
-<!-- 	 from countrylanguage -->
-<!-- 	where countryCode = #{code}  -->
+<select id="selectByLanguage">
+	select * 
+	 from countrylanguage
+	where language = #{language} 
+</select>
+
+<!--     <resultMap id="countryLanguageResultMap" type="com.example.imple.language.model.Language"> -->
+<!--         <result property="countryCode" column="countryCode"/> -->
+<!--         <result property="language" column="language"/> -->
+<!--         Add other properties if needed -->
+<!--     </resultMap> -->
+<!-- <select id="selectByCodeAndLanguage" resultMap="countryLanguageResultMap"> -->
+<!--     SELECT * -->
+<!--     FROM countrylanguage -->
+<!--     WHERE countryCode = #{countryCode} -->
+<!--     AND language = #{language} -->
 <!-- </select> -->
+
+<select id="selectByCodeAndLanguage">
+    SELECT *
+    FROM countrylanguage
+    WHERE countryCode = #{code}
+    AND language = #{language}
+</select>
+
 
 
 </mapper>

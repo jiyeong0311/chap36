@@ -14,5 +14,10 @@ public interface LanguageMapper {
 	List<Language> selectAll();
 	Page<Language> selectPage();
 	Language 	   selectByCode(String code);
+	Language	   selectByLanguage(String language);
+	
+	
+	String	   selectByCodeAndLanguage(String code, String language);
+	
 	
 }

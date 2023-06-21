@@ -26,43 +26,31 @@
 <hr>
 <section class="container">
 	<table class="table">
-		<thead>
-		<tr>
-                    <th scope="col">글번호</th>
-                    <th scope="col">제목</th>
-                    <th scope="col">내용</th>
-                    <th scope="col">작성자</th>
-                    <th scope="col">조회수</th>
-                    <th scope="col">작성시간</th>
-                    <th scope="col">작성일자</th>
-			</tr>
-		</thead>
+
 		<tbody>
-		  <c:forEach var="e" items="${list}">
-			<tr><th>countryCode</th><td>${e.countryCode}</td></tr>
-			<tr><th>language</th> <td>${e.language}</td></tr>
-			<tr><th>isOfficial</th>   <td>${e.isOfficial}</td></tr>
-			<tr><th>percentage</th>   <td>${e.percentage}</td></tr>
-			</c:forEach>
+			<tr><th>countryCode</th> 		<td>${language.countryCode}	</td></tr>
+			<tr><th>language</th> 		<td>${language.language}	</td></tr>
+			<tr><th>isOfficial</th>		<td>${language.isOfficial}	</td></tr>
+			<tr><th>percentage</th>   		<td>${language.percentage}		</td></tr>
 		</tbody>
 	</table>
 	<hr>
 	
-	<!-- 	ADMIN 권한만 보임 -->
-	<sec:authorize access="hasRole('ADMIN')">
-		<menu class="btn-group">
-			<a href="/dept/create" class="btn btn-primary">추가</a>
-			<a href="/dept/update?deptno=${dept.deptno}" class="btn btn-secondary">수정</a>
-			<a href="/dept/delete?deptno=${dept.deptno}" class="btn btn-danger">삭제</a>
-		</menu>
-		<hr>
-	</sec:authorize>
-	
-	<ul>
-		<li><a href="/dept/create">/dept/create</a></li>
-		<li><a href="/dept/update?deptno=${dept.deptno}">/dept/update?deptno=${dept.deptno}</a></li>
-		<li><a href="/dept/delete?deptno=${dept.deptno}">/dept/delete?deptno=${dept.deptno}</a></li>
-	</ul>
+        <!-- ADMIN 권한만 보임 -->
+        <sec:authorize access="hasRole('ADMIN')">
+            <menu class="btn-group">
+                <a href="/language/create" class="btn btn-primary">추가</a>
+                <a href="/language/update?language=${language.language}" class="btn btn-secondary">수정</a>
+                <a href="/language/delete?language=${language.language}" class="btn btn-danger">삭제</a>
+            </menu>
+            <hr>
+        </sec:authorize>
+
+        <ul>
+            <li><a href="/language/create">/language/create</a></li>
+            <li><a href="/language/update?language=${language.language}">/language/update?language=${language.language}</a></li>
+            <li><a href="/language/delete?language=${language.language}">/language/delete?language=${language.language}</a></li>
+        </ul>
 </section>
 </body>
 </html>
