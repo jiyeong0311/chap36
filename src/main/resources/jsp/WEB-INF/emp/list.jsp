@@ -15,44 +15,212 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
 
+<!-- template -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Vesperr
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 <title>list.jsp</title>
 </head>
 <body>
-<h1>Emp List</h1>
-<hr>
-<a href="/">Home</a>
-<hr>
-<section class="container">
-	<table class="table table-striped table-bordered table-hover">
-		<thead>
-			<tr>
-				<th>empno</th>
-				<th>ename</th>
-				<th>gender</th>
-				<th>job</th>
-				<th>mgr</th>
-				<th>hiredate</th>
-				<th>sal</th>
-				<th>comm</th>
-				<th>deptno</th>
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach var="e" items="${list}">
-			<tr>
-				<td>${e.empno}</td>
-				<td><a href="/emp/detail/${e.empno}">${e.ename}</a></td>
-				<td>${e.gender}</td>
-				<td>${e.job}</td>
-				<td>${e.mgr}</td>
-				<td>${e.hiredate}</td>
-				<td align="right">${e.sal}</td>
-				<td align="right">${e.comm}</td>
-				<td>${e.deptno}</td>
-			</tr>
-		</c:forEach>
-		</tbody>
-	</table>
-</section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Databox</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#features">Data</a></li>
+          <li><a class="nav-link scrollto " href="/#pricing">Board</a></li>
+<!--           <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+          <li class="dropdown "><a href="#"><span>List</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown "><a href="#"><span>Employee</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/dept/list">Dept</a></li>
+                  <li><a href="/emp/list">Emp</a></li>
+                  <li><a href="/salgrade/list">Salgrade</a></li>
+                </ul>
+              </li>
+              <li class="dropdown "><a href="#"><span>World</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/country/list">Country</a></li>
+                  <li><a href="/city/list">City</a></li>
+                  <li><a href="/language/list">Language</a></li>
+                </ul>
+              </li>
+             <li><a href="/board/list"><span>Board</span></a></li> 
+             <li><a href="/user/list"><span>User</span></a></li>             
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="getstarted scrollto" href="/user/login">&nbsp;Login&nbsp;</a></li>
+          </sec:authorize>
+<%--           <sec:authorize access="isAnonymous()"> --%>
+<!--           <li><a class="getstarted scrollto" href="/user/logout">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a></li> -->
+<%--           </sec:authorize> --%>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="join scrollto" href="/user/join">&nbsp;&nbsp;Join&nbsp;&nbsp;</a></li>
+          </sec:authorize>	
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<!-- End Header -->
+ <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Emp List</h2>
+          <p>ENAME을 클릭하여 상세내용을 확인하세요!</p>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h6>Employee</h6>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">empno</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ename</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">gender</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">job</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">mgr</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">hiredate</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">sal</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">comm</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">deptno</th>
+                </tr>
+              </thead>
+              <tbody>
+                <c:forEach var="e" items="${list}">
+                  <tr>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.empno}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm"><a href="/emp/detail/${e.empno}">${e.ename}</a></h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.gender}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.job}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.mgr}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.hiredate}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.sal}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.comm}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${e.deptno}</h6>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </c:forEach>
+              </tbody>
+            </table>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js"></script>
+  
+  
 </body>
 </html>

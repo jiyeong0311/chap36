@@ -44,53 +44,6 @@
 </head>
 <body>
 
-<!-- <div> -->
-<!-- <header> -->
-<!-- <div class="service_header"> -->
-<!-- 	<div class="wrap_inner"> -->
-<!-- 		<div class="f_l"> -->
-<!-- 			<img class="nav_png f_l" alt="메뉴" src="/img/nav.png" data-bs-toggle="offcanvas" data-bs-target="#demo"> -->
-<!-- 			<a href="/"><img class="write_png f_l" alt="메뉴" src="/img/write.png"></a> -->
-<!-- 		</div> -->
-<!-- 		<div class="f_r"> -->
-<!-- 		   <a href="/user/join" -->
-<!-- 		   id="join" -->
-<!-- 		   class="f_r btn_request btn_default">회원가입</a> -->
-<!-- 		   <a href="/user/login" -->
-<!-- 		   id="login" -->
-<!-- 		   class="f_r btn_request btn_default btn_login">시작하기</a> -->
-<!-- 		</div>		 -->
-<!-- 	</div> -->
-<!-- </div> -->
-
-
-<!-- <!-- Offcanvas Sidebar -->
-<!-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" id="demo"> -->
-<!-- 	 <div class="offcanvas-back"> -->
-<!-- 	 	<div class="offcanvas-header"> -->
-<!-- 	 	<img class="logo_offcanvas" alt="로고" src="/img/write_512.png"> -->
-<!-- 		</div> -->
-<!-- 		<p class="slogan">The Story of<br>Future Writers</p> -->
-		
-<!-- 		<a href="/user/login" -->
-<!-- 		   id="login2" -->
-<!-- 		   class="btn_request_side btn_default ">시작하기</a> -->
-<!-- 	</div> -->
-  
-<!--   <div class="offcanvas-body"> -->
-<!--     <p>- 스토리 홈 -</p> -->
-<!--     <p>- 최근 스토리 -</p> -->
-<!--     <button class="btn btn-secondary" type="button">A Button</button> -->
-<!--   </div> -->
-<!-- </div> -->
-<!-- </header> -->
-<!-- <main> -->
-<!-- </main> -->
-<!-- <footer> -->
-<!-- </footer> -->
-<!-- </div> -->
-
-
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -105,31 +58,39 @@
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="#features">Data</a></li>
+          <li><a class="nav-link scrollto " href="#services">Board</a></li>
+<!--           <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+          <li class="dropdown "><a href="#"><span>List</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown "><a href="#"><span>Employee</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="dept/list">Dept</a></li>
+                  <li><a href="emp/list">Emp</a></li>
+                  <li><a href="salgrade/list">Salgrade</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li class="dropdown "><a href="#"><span>World</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="country/list">Country</a></li>
+                  <li><a href="city/list">City</a></li>
+                  <li><a href="language/list">Language</a></li>
+                </ul>
+              </li>
+             <li><a href="board/list"><span>Board</span></a></li>
+             <li><a href="/user/list"><span>User</span></a></li>             
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <sec:authorize access="isAnonymous()">
           <li><a class="getstarted scrollto" href="/user/login">&nbsp;Login&nbsp;</a></li>
+          </sec:authorize>
+<%--           <sec:authorize access="isAnonymous()"> --%>
           <li><a class="getstarted scrollto" href="/user/logout">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a></li>
-          <li><a class="getstarted scrollto" href="/user/join">&nbsp;&nbsp;Join&nbsp;&nbsp;</a></li>
+<%--           </sec:authorize> --%>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="join scrollto" href="/user/join">&nbsp;&nbsp;Join&nbsp;&nbsp;</a></li>
+          </sec:authorize>	
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -144,7 +105,7 @@
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up"> Experience Database with Databox</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Employee와 World의 데이터를 자유롭게 수정하고 추가해보세요.</h2>
-          <h3 data-aos="fade-up" data-aos-delay="400">또한, 게시판을 통해 자유롭게 글을 작성하고 공유할 수 있습니다.</h3>
+          <h3 data-aos="fade-up" data-aos-delay="400">게시판을 통해 글을 작성하고 공유할 수 있습니다.</h3>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="/user/join" class="btn-get-started scrollto">Get Started</a>
           </div>
@@ -156,7 +117,7 @@
     </div>
   </section><!-- End Hero -->
 
-
+  <main id="main">
    <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients clients">
       <div class="container">
@@ -226,30 +187,10 @@
 
 
 
+<!-- 		###################################### -->
+<!-- 		############  Employee  ############## -->
+<!-- 		###################################### -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- salgrade list 만들어야함 ################# -->
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container">
@@ -286,6 +227,9 @@
 
 
 
+<!-- 		###################################### -->
+<!-- 		##############  World  ############### -->
+<!-- 		###################################### -->
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
@@ -320,6 +264,122 @@
     </section><!-- End Features Section -->
 
 
+<!-- 		###################################### -->
+<!-- 		###############  User  ############### -->
+<!-- 		###################################### -->
+    
+    <!-- ======= Features Section ======= -->
+   	<sec:authorize access="hasRole('ADMIN')">
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>User List</h2>
+          <p>User List는 관리자만 볼 수 있습니다.</p>
+        </div>
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box">
+              <i class="ri-store-line" style="color: #29cc61;"></i>
+              <h3><a href="/user/list">List</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+	</sec:authorize>
+
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Board</h2>
+          <p>게시글을 작성하거나 조회 할 수 있습니다</p>
+        </div>
+
+        <div class="row  justify-content-center">
+        
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="board/write">글 쓰기</a></h4>
+              <p class="description">원하시는 주제로 자유롭게 글을 작성하실 수 있으며, 필요한 경우에는 편리하게 수정하거나 삭제도 가능합니다 </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="board/list">글 목록</a></h4>
+              <p class="description">작성 하신 글을 확인 하고싶으시다면 목록 페이지에서 확인 하실 수 있습니다</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row  justify-content-center">
+
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info">
+              <div>
+                <i class="ri-map-pin-line"></i>
+                <p>121 Flinders Street<br>Westdale, NSW 2340</p>
+              </div>
+
+              <div>
+                <i class="ri-mail-send-line"></i>
+                <p>jamie031120@gmail.com</p>
+              </div>
+
+              <div>
+                <i class="ri-phone-line"></i>
+                <p>+614 0334 4800</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
 
 
 
@@ -331,19 +391,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-<hr>
 <sec:authorize access="isAuthenticated()">
 name = <sec:authentication property="name"/>
-</sec:authorize>
+<sec:authorize access="hasRole('ADMIN')">
+<hr>
+
 <hr>
 <i class="fas fa-camera-retro"></i>
 <a href="/board/list">/board/list</a>
@@ -352,28 +404,12 @@ name = <sec:authentication property="name"/>
 <br>
 <hr>
 <ul>
+	<li><a href="/user/logout">/user/logout</a></li>
 	<li><a href="/user/list    ">/user/list</a></li>
 	<li><a href="/user/detail">/user/detail</a></li>
 	<li><a href="/user/update?id='java'    ">/user/update</a></li>
 	<li><a href="/user/delete">/user/delete</a></li>
 </ul>
-
-<ul>
-	<sec:authorize access="isAnonymous()">
-	<li><a href="/user/login    ">/user/login</a></li>
-	</sec:authorize>
-	
-	<sec:authorize access="isAuthenticated()">
-	<li><a href="/user/logout   ">/user/logout</a></li>
-	</sec:authorize>
-</ul>
-<hr>
-<ul>
-	<li><a href="/dept/list    ">/dept/list</a></li>
-	<li><a href="/emp/list     ">/emp/list</a></li>
-	<li><a href="/salgrade/list">/salgrade/list</a></li>
-</ul>
-<hr>
 <ul>
 	<li><a href="/dept/detail/10   ">/dept/detail/10</a></li>
 	<li><a href="/emp/detail/1001  ">/emp/detail/1001</a></li>
@@ -400,11 +436,8 @@ name = <sec:authentication property="name"/>
 </ul>
 <hr>
 <ul>
-	<li><a href="/city/list">/city/list</a></li>
 	<li><a href="/city/page/1/10">/city/page</a></li>
-	<li><a href="/country/list">/country/list</a></li>
 	<li><a href="/country/page/1/10">/country/page</a></li>
-	<li><a href="/language/list">/language/list</a></li>
 	<li><a href="/language/page/1/10">/language/page</a></li>
 </ul>
 <hr>
@@ -418,44 +451,47 @@ name = <sec:authentication property="name"/>
 	<li><a href="/country/update?code=KOR">/country/update?code=KOR</a></li>
 	<li><a href="/country/delete?code=KOR">/country/delete?code=KOR</a></li>
 </ul>
+</sec:authorize>
+
+</sec:authorize>
 
 
 
 
 
 
-
-
-
-
+  </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
-          <div class="copyright">
-            &copy; Copyright <strong>Vesperr</strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
+<!--           <div class="copyright"> -->
+<!--             &copy; Copyright <strong>Vesperr</strong>. All Rights Reserved -->
+<!--           </div> -->
+<!--           <div class="credits"> -->
+<!--             All the links in the footer should remain intact. -->
+<!--             You can delete the links only if you purchased the pro version. -->
+<!--             Licensing information: https://bootstrapmade.com/license/ -->
+<!--             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
+<!--             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+<!--           </div> -->
         </div>
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">Home</a>
+            <a href="#intro" class="scrollto" href="/">Home</a>
             <a href="#about" class="scrollto">About</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+            <a href="#features">Date</a>
+            <a href="#services">Board</a>
           </nav>
         </div>
       </div>
     </div>
   </footer><!-- End Footer -->
+
+
+
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

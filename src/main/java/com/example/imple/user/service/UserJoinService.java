@@ -17,13 +17,9 @@ public class UserJoinService {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	
-
-	
 	public void joinUser (UserDTO dto) {
 		
 		String encodedPassword = passwordEncoder.encode(dto.getPassword());
-		
-		
 		
 		User user = User.builder()
 						.id(dto.getId())
@@ -38,13 +34,6 @@ public class UserJoinService {
 		
 		mapper.insertUser(user);
 		
-		
-
-		
 	}
-
-
-
-	
 	
 }

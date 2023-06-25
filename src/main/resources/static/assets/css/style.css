@@ -170,16 +170,48 @@ h6 {
   color: #fff;
 }
 
+.navbar .join,
+.navbar .join:focus {
+  background: #0967A6;
+  padding: 8px 25px;
+  margin-left: 30px;
+  margin-right: -15px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.navbar .detailbtn,
+.navbar .detailbtn:focus {
+  background: #909395;
+  padding: 8px 25px;
+  margin-left: 5px;
+  margin-right: -15px;
+  border-radius: 10px;
+  color: #fff;
+}
+
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
   background: #4aa3df;
 }
 
+.navbar .join:hover,
+.navbar .join:focus:hover {
+  color: #fff;
+  background: #267BB4;
+}
+
+.navbar .detailbtn:hover,
+.navbar .detailbtn:focus:hover {
+  color: #fff;
+  background: #B0B6BB;
+}
+
 .navbar .dropdown ul {
   display: block;
   position: absolute;
-  left: 30px;
+  right: 30px;
   top: calc(100% + 30px);
   margin: 0;
   padding: 10px 0;
@@ -219,14 +251,14 @@ h6 {
 
 .navbar .dropdown .dropdown ul {
   top: 0;
-  left: calc(100% - 30px);
+  right: calc(100% - 30px);
   visibility: hidden;
 }
 
 .navbar .dropdown .dropdown:hover>ul {
   opacity: 1;
   top: 0;
-  left: 100%;
+  right: 100%;
   visibility: visible;
 }
 
@@ -313,6 +345,16 @@ h6 {
 
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+.navbar-mobile .join,
+.navbar-mobile .join:focus {
+  margin: 15px;
+}
+
+.navbar-mobile .detailbtn,
+.navbar-mobile .detailbtn:focus {
   margin: 15px;
 }
 
@@ -871,6 +913,38 @@ section {
   background: #eef7fc;
 }
 
+.pagination.pagination-no-border > li > a,
+.pagination.pagination-no-border > li > span {
+  border: 0; }
+
+.pagination > li > a, .pagination > li > span, .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-radius: 50%;
+  margin: 0 2px;
+  color: #777777; }
+
+.pagination > li.active > a, .pagination > li.active > span, .pagination > li.active > a:hover, .pagination > li.active > span:hover, .pagination > li.active > a:focus, .pagination > li.active > span:focus {
+  background-color: #2CA8FF;
+  border: 0;
+  color: #FFFFFF;
+  padding: 7px 13px; }
+  
+.nav-pills.ct-azzure > li.active > a,
+.nav-pills.ct-azzure > li.active > a:hover,
+.nav-pills.ct-azzure > li.active > a:focus,
+.pagination.ct-azzure > li.active > a,
+.pagination.ct-azzure > li.active > span,
+.pagination.ct-azzure > li.active > a:hover,
+.pagination.ct-azzure > li.active > span:hover,
+.pagination.ct-azzure > li.active > a:focus,
+.pagination.ct-azzure > li.active > span:focus {
+  background-color: #2CA8FF; }
+  
+.main{
+    background-color: #FFFFFF;
+    position: relative;
+}
+    
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
@@ -1382,6 +1456,49 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
+/* .contact .php-email-form input, */
+/* .contact .php-email-form textarea { */
+/*   border-radius: 0; */
+/*   box-shadow: none; */
+/*   font-size: 14px; */
+/*   padding: 10px 15px; */
+/* } */
+
+/* .contact .php-email-form input:focus, */
+/* .contact .php-email-form textarea:focus { */
+/*   border-color: #3498db; */
+/* } */
+
+/* .contact .php-email-form button[type=submit] { */
+/*   background: #3498db; */
+/*   border: 0; */
+/*   padding: 10px 24px; */
+/*   color: #fff; */
+/*   border-radius: 50px; */
+/* } */
+
+/* .contact .php-email-form button[type=submit]:hover { */
+/*   background: #2383c4; */
+/* } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .contact .contact-about h3 {
   font-size: 28px;
   margin: 0 0 10px 0;
@@ -1399,30 +1516,30 @@ section {
   color: #888;
 }
 
-.contact .social-links {
-  padding-bottom: 20px;
-}
+/* .contact .social-links { */
+/*   padding-bottom: 20px; */
+/* } */
 
-.contact .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #fff;
-  color: #3498db;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-  border: 1px solid #3498db;
-}
+/* .contact .social-links a { */
+/*   font-size: 18px; */
+/*   display: inline-block; */
+/*   background: #fff; */
+/*   color: #3498db; */
+/*   line-height: 1; */
+/*   padding: 8px 0; */
+/*   margin-right: 4px; */
+/*   border-radius: 50%; */
+/*   text-align: center; */
+/*   width: 36px; */
+/*   height: 36px; */
+/*   transition: 0.3s; */
+/*   border: 1px solid #3498db; */
+/* } */
 
-.contact .social-links a:hover {
-  background: #3498db;
-  color: #fff;
-}
+/* .contact .social-links a:hover { */
+/*   background: #3498db; */
+/*   color: #fff; */
+/* } */
 
 .contact .info {
   color: #444444;
@@ -1441,48 +1558,52 @@ section {
   font-size: 14px;
 }
 
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
+/* .contact .php-email-form .error-message { */
+/*   display: none; */
+/*   color: #fff; */
+/*   background: #ed3c0d; */
+/*   text-align: left; */
+/*   padding: 15px; */
+/*   font-weight: 600; */
+/* } */
 
-.contact .php-email-form .error-message br+br {
-  margin-top: 25px;
-}
+/* .contact .php-email-form .error-message br+br { */
+/*   margin-top: 25px; */
+/* } */
 
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
+/* .contact .php-email-form .sent-message { */
+/*   display: none; */
+/*   color: #fff; */
+/*   background: #18d26e; */
+/*   text-align: center; */
+/*   padding: 15px; */
+/*   font-weight: 600; */
+/* } */
 
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
+/* .contact .php-email-form .loading { */
+/*   display: none; */
+/*   background: #fff; */
+/*   text-align: center; */
+/*   padding: 15px; */
+/* } */
 
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
+/* .contact .php-email-form .loading:before { */
+/*   content: ""; */
+/*   display: inline-block; */
+/*   border-radius: 50%; */
+/*   width: 24px; */
+/*   height: 24px; */
+/*   margin: 0 10px -6px 0; */
+/*   border: 3px solid rgb(0, 128, 255); */
+/*   border-top-color: #eee; */
+/*   animation: animate-loading 1s linear infinite; */
+/* } */
 
 .contact .php-email-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact .form-group {
   margin-bottom: 20px;
 }
 
@@ -1494,8 +1615,21 @@ section {
   padding: 10px 15px;
 }
 
+.contact  input,
+.contact  textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
+  border-color: #3498db;
+}
+
+.contact input:focus,
+.contact textarea:focus {
   border-color: #3498db;
 }
 
@@ -1508,19 +1642,32 @@ section {
   border-radius: 50px;
 }
 
+.contact  button[type=submit] {
+  background: #3498db;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
 .contact .php-email-form button[type=submit]:hover {
   background: #2383c4;
 }
 
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+.contact button[type=submit]:hover {
+  background: #2383c4;
 }
+
+/* @keyframes animate-loading { */
+/*   0% { */
+/*     transform: rotate(0deg); */
+/*   } */
+
+/*   100% { */
+/*     transform: rotate(360deg); */
+/*   } */
+/* } */
 
 /*--------------------------------------------------------------
 # Breadcrumbs

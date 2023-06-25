@@ -20,18 +20,19 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping("/language")
 @Slf4j
-public class LanguageDetailController implements DetailController<String> {
+public class LanguageDetailController {
 
 	@Autowired
 	LanguageMapper mapper;
 
-    @Override
+    @GetMapping("/detail/{code}")
     public String detail(@PathVariable String code, Model model, HttpServletRequest request) {
         var language = mapper.selectByCodeAndLanguage(code, null);
         model.addAttribute("language", language);
         return "language/detail"; 
     }
-
+    
+    @GetMapping("/detail/{code}/{language}")
     public String detail(@PathVariable String code, @PathVariable String language, Model model, HttpServletRequest request) {
         language = mapper.selectByCodeAndLanguage(code, language);
         model.addAttribute("language", language);

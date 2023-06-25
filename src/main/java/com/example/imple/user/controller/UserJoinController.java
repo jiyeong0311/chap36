@@ -16,7 +16,6 @@ import com.example.imple.user.model.UserDTO;
 import com.example.imple.user.service.UserJoinService;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -40,10 +39,7 @@ public class UserJoinController {
 			session.removeAttribute("binding");
 		}
 		
-		
 	}
-	
-	
 	
 	@PostMapping("/join")
 	public String processjoinForm(@Validated UserDTO dto, BindingResult binding, Model model, HttpServletRequest request, RedirectAttributes attr) {
@@ -54,11 +50,8 @@ public class UserJoinController {
 		session.setAttribute("users", dto);
 		session.setAttribute("binding", binding);
 		
-		
 		if(binding.hasErrors()) 
 			return"redirect:/user/join?error";
-		
-		
 		
 		try {
 			service.joinUser(dto);
@@ -70,11 +63,5 @@ public class UserJoinController {
 		// 회원 가입 성공하면 success 페이지로 이동
 		return "redirect:/user/success?join";
 	}
-
-
-	
-	
-	
-	
 	
 }

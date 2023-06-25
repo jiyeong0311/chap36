@@ -52,76 +52,92 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html">Databox</a></h1>
+        <h1><a href="/">Databox</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
-<!--           <li><a class="nav-link scrollto" href="#about">About</a></li> -->
-<!--           <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
-<!--           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> -->
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#features">Data</a></li>
+          <li><a class="nav-link scrollto " href="/#pricing">Board</a></li>
 <!--           <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
-<!--           <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
-<!--           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a> -->
-<!--             <ul> -->
-<!--               <li><a href="#">Drop Down 1</a></li> -->
-<!--               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a> -->
-<!--                 <ul> -->
-<!--                   <li><a href="#">Deep Drop Down 1</a></li> -->
-<!--                   <li><a href="#">Deep Drop Down 2</a></li> -->
-<!--                   <li><a href="#">Deep Drop Down 3</a></li> -->
-<!--                   <li><a href="#">Deep Drop Down 4</a></li> -->
-<!--                   <li><a href="#">Deep Drop Down 5</a></li> -->
-<!--                 </ul> -->
-<!--               </li> -->
-<!--               <li><a href="#">Drop Down 2</a></li> -->
-<!--               <li><a href="#">Drop Down 3</a></li> -->
-<!--               <li><a href="#">Drop Down 4</a></li> -->
-<!--             </ul> -->
-<!--           </li> -->
-<!--           <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-          <li><a class="getstarted scrollto" href="/user/login">Login</a></li>
-          <li><a class="getstarted scrollto" href="/user/join">Join</a></li>
+          <li class="dropdown "><a href="#"><span>List</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown "><a href="#"><span>Employee</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/dept/list">Dept</a></li>
+                  <li><a href="/emp/list">Emp</a></li>
+                  <li><a href="/salgrade/list">Salgrade</a></li>
+                </ul>
+              </li>
+              <li class="dropdown "><a href="#"><span>World</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/country/list">Country</a></li>
+                  <li><a href="/city/list">City</a></li>
+                  <li><a href="/language/list">Language</a></li>
+                </ul>
+              </li>
+             <li><a href="/board/list"><span>Board</span></a></li>
+             <li><a href="/user/list"><span>User</span></a></li>              
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="getstarted scrollto" href="/user/login">&nbsp;Login&nbsp;</a></li>
+          </sec:authorize>
+<%--           <sec:authorize access="isAnonymous()"> --%>
+<!--           <li><a class="getstarted scrollto" href="/user/logout">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a></li> -->
+<%--           </sec:authorize> --%>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="join scrollto" href="/user/join">&nbsp;&nbsp;Join&nbsp;&nbsp;</a></li>
+          </sec:authorize>	
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
-  </header><!-- End Header -->
+  </header>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<!-- End Header -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact ">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>게시글 작성</h2>
+        </div>
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-10 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <form action="/board/write" method="post" role="form">
+          
+            
+              <div class="form-group">
+                <input class="form-control" id="title" name="title" type="text" placeholder="제목" value="${board.title}" >
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="writer" name="writer" type="text" placeholder="작성자" value="${board.writer}">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" id="content" name="content" rows="10" placeholder="내용" value="${board.content}" required></textarea>
+              </div>
+              
+<!--               <div class="my-3"> -->
+<!--                 <div class="sent-message">Your message has been sent. Thank you!</div> -->
+<!--               </div> -->
+              <button type="submit">&nbsp;&nbsp;&nbsp;&nbsp;등록&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
 
 
-
-
-
-
-
-
-
-<section class="container">
-	<form action="/board/write" method="post">
-<!-- 		<div class="mb-3"> -->
-<!-- 			<label class="form-lable mb-2" for="boardIdx">boardIdx<span>*</span></label> -->
-<%-- 			<input class="form-control"    id="boardIdx" name="boardIdx" value="${board.boardIdx}"/> --%>
-<!-- 		</div> -->
-		<div class="mb-3">
-			<label class="form-lable mb-2" for="title">title<span>*</span></label>
-			<input class="form-control"    id="title"  name="title" value="${board.title}"/>
-		</div>
-		<div class="mb-3">
-			<label class="form-lable mb-2" for="content">content</label>
-			<input class="form-control"    id="content"	   name="content" value="${board.content}"/>
-		</div>
-		<div class="mb-3">
-			<label class="form-lable mb-2" for="writer">writer</label>
-			<input class="form-control"    id="writer"	   name="writer" value="${board.writer}"/>
-		</div>
-
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>	
-</section>
 <c:if test="${binding.hasErrors()}">
 <h2>Error Massage</h2>
 <hr>
@@ -135,44 +151,19 @@
 
 </c:if>
 
-
-
-
-
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <script src="/assets/js/main.js"></script>
 
 
 </body>

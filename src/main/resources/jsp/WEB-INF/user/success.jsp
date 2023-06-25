@@ -21,6 +21,7 @@
 <h1>User Successful 성공</h1>
 <hr>
 <a href="/">Home</a>
+<a href="/user/list">user/list</a>
 <hr>
 <br>
 <c:choose>

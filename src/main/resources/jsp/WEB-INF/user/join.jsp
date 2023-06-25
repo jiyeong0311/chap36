@@ -61,7 +61,7 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">회원가입</button>
                 <hr>
-                <a href="/user/login.jsp" class="btn btn-block login">로그인</a>
+                <a href="/user/login" class="btn btn-block login">로그인</a>
             </div>
         </form>
         <div class="social-media">

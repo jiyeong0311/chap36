@@ -44,8 +44,9 @@
 <select id="selectByCodeAndLanguage">
     SELECT *
     FROM countrylanguage
-    WHERE countryCode = #{code}
+    WHERE countryCode = #{code} <if test="language != null">
     AND language = #{language}
+    </if>
 </select>
 
 

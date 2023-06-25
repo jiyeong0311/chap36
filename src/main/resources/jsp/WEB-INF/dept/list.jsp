@@ -49,26 +49,58 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
+
       <div class="logo">
-        <h1><a href="index.html">Databox</a></h1>
+        <h1><a href="/">Databox</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="getstarted scrollto" href="/user/login">Login</a></li>
-          <li><a class="getstarted scrollto" href="/user/join">Join</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#features">Data</a></li>
+          <li><a class="nav-link scrollto " href="/#pricing">Board</a></li>
+<!--           <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+          <li class="dropdown "><a href="#"><span>List</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown "><a href="#"><span>Employee</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/dept/list">Dept</a></li>
+                  <li><a href="/emp/list">Emp</a></li>
+                  <li><a href="/salgrade/list">Salgrade</a></li>
+                </ul>
+              </li>
+              <li class="dropdown "><a href="#"><span>World</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/country/list">Country</a></li>
+                  <li><a href="/city/list">City</a></li>
+                  <li><a href="/language/list">Language</a></li>
+                </ul>
+              </li>
+             <li><a href="/board/list"><span>Board</span></a></li>
+             <li><a href="/user/list"><span>User</span></a></li>              
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="getstarted scrollto" href="/user/login">&nbsp;Login&nbsp;</a></li>
+          </sec:authorize>
+<%--           <sec:authorize access="isAnonymous()"> --%>
+<!--           <li><a class="getstarted scrollto" href="/user/logout">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a></li> -->
+<%--           </sec:authorize> --%>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="join scrollto" href="/user/join">&nbsp;&nbsp;Join&nbsp;&nbsp;</a></li>
+          </sec:authorize>	
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
-  </header><!-- End Header -->
-
-
-
+  </header>
 <h1>&nbsp;</h1>
 <h1>&nbsp;</h1>
+<!-- End Header -->
+
  <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container">
@@ -82,10 +114,10 @@
     <div class="col-12">
       <div class="card mb-4">
         <div class="card-header pb-0">
-          <h6>Employee Table</h6>
+          <h6>Employee</h6>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
-          <div class="table-responsive p-0">
+              <div class="table-responsive p-0">
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
@@ -122,8 +154,8 @@
                 </c:forEach>
               </tbody>
             </table>
-          </div>
-        </div>
+      </div>
+      </div>
       </div>
     </div>
   </div>
@@ -145,6 +177,10 @@
   <script src="/assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
+
+
+
+
 
 
 

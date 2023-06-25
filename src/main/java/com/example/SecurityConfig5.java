@@ -11,8 +11,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import jakarta.servlet.DispatcherType;
 
-//@Configuration
-public class SecurityConfig4 {
+@Configuration
+public class SecurityConfig5 {
 	
 	@Autowired
 	UserDetailsService userDetailsService;
@@ -48,48 +48,77 @@ public class SecurityConfig4 {
 			request.requestMatchers("/assets/**").permitAll();
 			
 			request.requestMatchers("/user/join").permitAll();
-			request.requestMatchers("/user/list").permitAll();
-			request.requestMatchers("/user/detail").permitAll();
-			request.requestMatchers("/user/update").permitAll();
-			request.requestMatchers("/user/delete").permitAll();
-			request.requestMatchers("/user/header").permitAll();
+//			request.requestMatchers("/user/list").permitAll();
+//			request.requestMatchers("/user/detail").permitAll();
+//			request.requestMatchers("/user/update").permitAll();
+//			request.requestMatchers("/user/delete").permitAll();
 			
-			request.requestMatchers("/country/create").permitAll();
+//			request.requestMatchers("/country/create").permitAll();
 			request.requestMatchers("/country/list").permitAll();
 			request.requestMatchers("/country/detail").permitAll();
-			request.requestMatchers("/country/update").permitAll();
-			request.requestMatchers("/country/delete").permitAll();
+//			request.requestMatchers("/country/update").permitAll();
+//			request.requestMatchers("/country/delete").permitAll();
 			request.requestMatchers("/country/success").permitAll();
-			
+//			
 			request.requestMatchers("/language/detail").permitAll();
-			request.requestMatchers("/language/create").permitAll();
+//			request.requestMatchers("/language/create").permitAll();
 			
 			
 			request.requestMatchers("/board/list").permitAll();
-			request.requestMatchers("/board/write").permitAll();
+//			request.requestMatchers("/board/write").permitAll();
 			request.requestMatchers("/board/detail").permitAll();
-			request.requestMatchers("/board/update").permitAll();
-			request.requestMatchers("/board/delete").permitAll();
+//			request.requestMatchers("/board/update").permitAll();
+//			request.requestMatchers("/board/delete").permitAll();
 			
 			request.requestMatchers("/dept/list", 	  "/dept/detail/{key}").permitAll();
 			request.requestMatchers("/emp/list", 	  "/emp/detail/{key}").permitAll();
 			request.requestMatchers("/salgrade/list", "/salgrade/detail/{key}").permitAll();
 			request.requestMatchers("/board/list", "/board/detail/{key}").permitAll();
-			request.requestMatchers("/user/list", "/user/detail/{key}").permitAll();
+//			request.requestMatchers("/user/list", "/user/detail/{key}").permitAll();
 			request.requestMatchers("/language/list", "/language/detail/{key}").permitAll();
 			request.requestMatchers("/country/list", "/country/detail/{key}").permitAll();
 			request.requestMatchers("/salgrade/list", "/salgrade/detail/{key}").permitAll();
 			request.requestMatchers("/city/list", "/city/detail/{key}").permitAll();
 			
-//			// USER 권한만 가능
-//			request.requestMatchers("/dept/create",
-//									"/dept/update",
-//									"/dept/delete").hasAnyRole("USER");
+			
+			// USER 권한만 가능
+			request.requestMatchers("/dept/create",
+									"/dept/update",
+									"/dept/delete").hasAnyRole("USER");
+			// USER 권한만 가능
+			request.requestMatchers("/board/write",
+					"/board/update",
+					"/board/delete").hasAnyRole("USER");
+			// USER 권한만 가능
+			request.requestMatchers("/emp/create",
+					"/emp/update",
+					"/emp/delete").hasAnyRole("USER");
+			// USER 권한만 가능
+			request.requestMatchers("/salgrade/create",
+					"/salgrade/update",
+					"/salgrade/delete").hasAnyRole("USER");
+			// USER 권한만 가능
+			request.requestMatchers("/city/create",
+					"/city/update",
+					"/city/delete").hasAnyRole("USER");
+			// USER 권한만 가능
+			request.requestMatchers("/country/create",
+					"/country/update",
+					"/country/delete").hasAnyRole("USER");
+			// USER 권한만 가능
+			request.requestMatchers("/language/create",
+					"/language/update",
+					"/language/delete").hasAnyRole("USER");
+			
+			// ADMIN 권한만 가능
+			request.requestMatchers("/user/list",
+					"/user/detail",
+					"/user/update").hasAnyRole("ADMIN");
 			
 			
 			// 모든 요청에 대해 인증된 사용자만 접근을 허용한다는 의미
-//			request.anyRequest().authenticated();
-			request.anyRequest().permitAll();
+			request.anyRequest().authenticated();
+//			request.anyRequest().permitAll();
 			
 		});
 		

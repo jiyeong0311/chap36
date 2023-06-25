@@ -23,16 +23,8 @@ public class BoardListController  {
     	var list = mapper.selectBoardList(); // 게시글 목록을 가져옴
     	
     	model.addAttribute("list", list); // 모델에 게시글 목록 추가
-
-
-    	
     	
     }
-	
-
-    
-    
-    
     
 
 }

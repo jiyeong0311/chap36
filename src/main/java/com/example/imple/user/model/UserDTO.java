@@ -49,8 +49,6 @@ public class UserDTO implements Modelable<User>{
 	
 	@Override
 	public User getModel() {
-
-		
 		
 		return User.builder()
 				   .id(id)
@@ -64,8 +62,5 @@ public class UserDTO implements Modelable<User>{
 				   .build();
 				
 	}
-
-
-	
 	
 }

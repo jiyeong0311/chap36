@@ -15,45 +15,221 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
 
+<!-- template -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Vesperr
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
 <title>detail.jsp</title>
 </head>
 <body>
-<h1>User Detail 회원 정보</h1>
-<hr>
-<a href="/">Home</a>
-<hr>
-<a href="/user/list">/user/list</a>
-<hr>
-<section class="container">
-	<table class="table">
-		<tbody>
-			<tr><th>id</th>			<td>${users.id}</td></tr>
-			<tr><th>password</th> 	<td>${users.password}</td></tr>
-			<tr><th>name</th>   	<td>${users.name}</td></tr>
-			<tr><th>birth</th>   	<td>${users.birth}</td></tr>
-			<tr><th>gender</th>   	<td>${users.gender}</td></tr>
-			<tr><th>email</th>   	<td>${users.email}</td></tr>
-			<tr><th>address</th>   	<td>${users.address}</td></tr>
-			<tr><th>tel</th>   		<td>${users.tel}</td></tr>
-		</tbody>
-	</table>
-	<hr>
-	
-	<!-- 	ADMIN 권한만 보임 -->
-<%-- 	<sec:authorize access="hasRole('ADMIN')"> --%>
-		<menu class="btn-group">
-			<a href="/user/join" class="btn btn-primary">추가</a>
-			<a href="/user/update?id=${users.id}" class="btn btn-secondary">수정</a>
-			<a href="/user/delete?id=${users.id}" class="btn btn-danger">삭제</a>
-		</menu>
-		<hr>
-<%-- 	</sec:authorize> --%>
-	
-	<ul>
-		<li><a href="/user/join">/user/join</a></li>
-		<li><a href="/user/update?id=${users.id}">/user/update?id=${users.id}</a></li>
-		<li><a href="/user/delete?id=${users.id}">/user/delete?id=${users.id}</a></li>
-	</ul>
-</section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Databox</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#features">Data</a></li>
+          <li><a class="nav-link scrollto " href="/#pricing">Board</a></li>
+<!--           <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+          <li class="dropdown "><a href="#"><span>List</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown "><a href="#"><span>Employee</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/dept/list">Dept</a></li>
+                  <li><a href="/emp/list">Emp</a></li>
+                  <li><a href="/salgrade/list">Salgrade</a></li>
+                </ul>
+              </li>
+              <li class="dropdown "><a href="#"><span>World</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/country/list">Country</a></li>
+                  <li><a href="/city/list">City</a></li>
+                  <li><a href="/language/list">Language</a></li>
+                </ul>
+              </li>
+             <li><a href="/board/list"><span>Board</span></a></li>          
+             <li><a href="/user/list"><span>User</span></a></li>                 
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="getstarted scrollto" href="/user/login">&nbsp;Login&nbsp;</a></li>
+          </sec:authorize>
+<%--           <sec:authorize access="isAnonymous()"> --%>
+<!--           <li><a class="getstarted scrollto" href="/user/logout">&nbsp;&nbsp;Logout&nbsp;&nbsp;</a></li> -->
+<%--           </sec:authorize> --%>
+          <sec:authorize access="isAnonymous()">
+          <li><a class="join scrollto" href="/user/join">&nbsp;&nbsp;Join&nbsp;&nbsp;</a></li>
+          </sec:authorize>	
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<!-- End Header -->
+
+ <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>User Detail</h2>
+          <p>User Detail에서 추가, 수정, 삭제한 내용은 DB에 업데이트됩니다!</p>
+          <p>실제로 사용하는 ID, Password 입력하지 마세요!</p>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+		   <div class="btn-group">
+				<a href="/user/join" class="btn">추가</a>
+				<a href="/user/update?id=${users.id}" class="btn">수정</a>
+				<a href="/user/delete?id=${users.id}" class="btn">삭제</a>
+			</div>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+              <tbody>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.id}"</h6>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">password</th>
+                  	<td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.password}</h6>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name</th>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.name}</h6>
+                        </div>
+                      </div>
+                    </td>                  
+                </tr>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">birth</th>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.birth}</h6>
+                        </div>
+                      </div>
+                    </td>                  
+                </tr>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">gender</th>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.gender}</h6>
+                        </div>
+                      </div>
+                    </td>                  
+                </tr>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">email</th>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.email}</h6>
+                        </div>
+                      </div>
+                    </td>                  
+                </tr>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">address</th>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.address}</h6>
+                        </div>
+                      </div>
+                    </td>                  
+                </tr>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">tel</th>
+                    <td class="align-middle text-center text-sm">
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">${users.tel}</h6>
+                        </div>
+                      </div>
+                    </td>                  
+                </tr>
+              </tbody>
+            </table>
+      </div>
+      </div>
+      </div>
+<nav id="navbar" class="navbar">
+  <ul>    
+    <li><a class="detailbtn" href="/user/list">List로 돌아가기</a></li>   
+    </ul>
+</nav>  
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
